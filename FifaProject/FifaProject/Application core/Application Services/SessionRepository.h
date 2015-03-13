@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Avantica Technologies. All rights reserved.
 //
 
-//#import "AVTBaseRepository.h"
+#import "AVTBaseRepository.h"
 
-@interface SessionRepository : NSObject//AVTBaseRepository
+@interface SessionRepository : AVTBaseRepository
 
 - (void) setCurrentUser: (NSString *)user_name userPassword:(NSString *)password;
 - (BOOL) loginValidateFields: (NSString *)user_name userPassword:(NSString *)password;

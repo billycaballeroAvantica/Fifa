@@ -14,14 +14,15 @@
 		666357B41AB32D3400C631E9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 666357931AB32D3400C631E9 /* User.m */; };
 		666357B51AB32D3400C631E9 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 666357981AB32D3400C631E9 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		666357B61AB32D3400C631E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 666357A01AB32D3400C631E9 /* Images.xcassets */; };
-		666357B71AB32D3400C631E9 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666357A11AB32D3400C631E9 /* Main_iPad.storyboard */; };
-		666357B81AB32D3400C631E9 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666357A21AB32D3400C631E9 /* Main_iPhone.storyboard */; };
 		666357B91AB32D3400C631E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 666357A81AB32D3400C631E9 /* AppDelegate.m */; };
 		666357BA1AB32D3400C631E9 /* FifaProject-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 666357A91AB32D3400C631E9 /* FifaProject-Info.plist */; };
 		666357BB1AB32D3400C631E9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 666357AB1AB32D3400C631E9 /* InfoPlist.strings */; };
 		666357BC1AB32D3400C631E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 666357AC1AB32D3400C631E9 /* main.m */; };
 		666357BD1AB32D3400C631E9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666357B11AB32D3400C631E9 /* LoginViewController.m */; };
 		666357C41AB32FFA00C631E9 /* DashBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666357C31AB32FFA00C631E9 /* DashBoardViewController.m */; };
+		669616E01AB33D5B0036A0EE /* libCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 669616DF1AB33D5B0036A0EE /* libCommon.a */; };
+		669616E41AB33DEC0036A0EE /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669616E21AB33DEC0036A0EE /* Main_iPad.storyboard */; };
+		669616E51AB33DEC0036A0EE /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669616E31AB33DEC0036A0EE /* Main_iPhone.storyboard */; };
 		CE6086B31977171A0021B562 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6086B21977171A0021B562 /* Foundation.framework */; };
 		CE6086B51977171A0021B562 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6086B41977171A0021B562 /* CoreGraphics.framework */; };
 		CE6086B71977171A0021B562 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6086B61977171A0021B562 /* UIKit.framework */; };
@@ -50,8 +51,6 @@
 		666357971AB32D3400C631E9 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		666357981AB32D3400C631E9 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		666357A01AB32D3400C631E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		666357A11AB32D3400C631E9 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
-		666357A21AB32D3400C631E9 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		666357A71AB32D3400C631E9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		666357A81AB32D3400C631E9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		666357A91AB32D3400C631E9 /* FifaProject-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FifaProject-Info.plist"; sourceTree = "<group>"; };
@@ -62,6 +61,9 @@
 		666357B11AB32D3400C631E9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		666357C21AB32FFA00C631E9 /* DashBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardViewController.h; sourceTree = "<group>"; };
 		666357C31AB32FFA00C631E9 /* DashBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardViewController.m; sourceTree = "<group>"; };
+		669616DF1AB33D5B0036A0EE /* libCommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCommon.a; path = "../Common/build/Debug-iphoneos/libCommon.a"; sourceTree = "<group>"; };
+		669616E21AB33DEC0036A0EE /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		669616E31AB33DEC0036A0EE /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		CE6086AF1977171A0021B562 /* FifaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FifaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6086B21977171A0021B562 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE6086B41977171A0021B562 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669616E01AB33D5B0036A0EE /* libCommon.a in Frameworks */,
 				66319D221AB23E0F004F09F9 /* Security.framework in Frameworks */,
 				CE6086B51977171A0021B562 /* CoreGraphics.framework in Frameworks */,
 				CE6086B71977171A0021B562 /* UIKit.framework in Frameworks */,
@@ -210,8 +213,6 @@
 			children = (
 				6663579F1AB32D3400C631E9 /* Fonts */,
 				666357A01AB32D3400C631E9 /* Images.xcassets */,
-				666357A11AB32D3400C631E9 /* Main_iPad.storyboard */,
-				666357A21AB32D3400C631E9 /* Main_iPhone.storyboard */,
 				666357A31AB32D3400C631E9 /* Others */,
 				666357A41AB32D3400C631E9 /* Property Lists */,
 				666357A51AB32D3400C631E9 /* Strings */,
@@ -263,6 +264,7 @@
 		666357AD1AB32D3400C631E9 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
+				669616E11AB33DEC0036A0EE /* Story Boards */,
 				666357AE1AB32D3400C631E9 /* Controllers */,
 				666357B21AB32D3400C631E9 /* Views */,
 			);
@@ -303,6 +305,15 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
+		669616E11AB33DEC0036A0EE /* Story Boards */ = {
+			isa = PBXGroup;
+			children = (
+				669616E21AB33DEC0036A0EE /* Main_iPad.storyboard */,
+				669616E31AB33DEC0036A0EE /* Main_iPhone.storyboard */,
+			);
+			path = "Story Boards";
+			sourceTree = "<group>";
+		};
 		CE6086A61977171A0021B562 = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +336,7 @@
 		CE6086B11977171A0021B562 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				669616DF1AB33D5B0036A0EE /* libCommon.a */,
 				66319D211AB23E0F004F09F9 /* Security.framework */,
 				CE6086B21977171A0021B562 /* Foundation.framework */,
 				CE6086B41977171A0021B562 /* CoreGraphics.framework */,
@@ -429,10 +441,10 @@
 			files = (
 				666357B61AB32D3400C631E9 /* Images.xcassets in Resources */,
 				666357BB1AB32D3400C631E9 /* InfoPlist.strings in Resources */,
-				666357B71AB32D3400C631E9 /* Main_iPad.storyboard in Resources */,
-				666357B81AB32D3400C631E9 /* Main_iPhone.storyboard in Resources */,
 				66319D031AB1D723004F09F9 /* InfoPlist.strings in Resources */,
+				669616E41AB33DEC0036A0EE /* Main_iPad.storyboard in Resources */,
 				666357BA1AB32D3400C631E9 /* FifaProject-Info.plist in Resources */,
+				669616E51AB33DEC0036A0EE /* Main_iPhone.storyboard in Resources */,
 				66319CFC1AB1D6CF004F09F9 /* FifaProjectTests-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,6 +592,10 @@
 				);
 				INFOPLIST_FILE = "FifaProject/Supporting Files/FifaProject-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/billycaballero/Projects/Fifa/Common/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = FifaProject;
 				WRAPPER_EXTENSION = app;
 			};
@@ -603,6 +619,10 @@
 				);
 				INFOPLIST_FILE = "FifaProject/Supporting Files/FifaProject-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/billycaballero/Projects/Fifa/Common/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = FifaProject;
 				WRAPPER_EXTENSION = app;
 			};
