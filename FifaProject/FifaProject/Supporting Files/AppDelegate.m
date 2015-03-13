@@ -18,6 +18,7 @@
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
     }
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     return YES;
 }
 							

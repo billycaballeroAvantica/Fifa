@@ -15,6 +15,6 @@
     #import <Foundation/Foundation.h>
 
     #import "AFNetworking.h"
-    #import "MRProgressOverlayView.h"
+    #import "MRProgress.h"
     #import "AVTLocalizationMacros.h"
 #endif

@@ -9,7 +9,9 @@
 #import "LoginViewController.h"
 #import "SessionRepository.h"
 #import "AVTAlertViewFactory.h"
-#import "DashBoardViewController.h"
+
+static NSString const *kFIFAGoMainSectionIndentifier = @"goMainSectionsIdentifier";
+
 
 @implementation LoginViewController
 
@@ -23,7 +25,6 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    //[[SeccionRepository sharedRepository] getUsername]
     [self setConstantContraints];
 }
 
@@ -94,7 +95,7 @@
 - (void) logginCurrentUser {
     if ([[SessionRepository sharedRepository] loginValidateFields:self.username_textfield.text userPassword:self.password_textfield.text ] ){
         [[SessionRepository sharedRepository] setCurrentUser:self.username_textfield.text userPassword:self.password_textfield.text];
-        [self performSegueWithIdentifier:@"goWelcomeViewController" sender:self];
+        [self performSegueWithIdentifier:kFIFAGoMainSectionIndentifier sender:self];
     }else{
         UIAlertView *alert = [[AVTAlertViewFactory sharedFactory]  alertViewWithTitle: @"Invalid Fields" andMessage: @"Incorrect User name and password." ];
         [alert show];
@@ -127,8 +128,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"goWelcomeViewController"]){
-        //DashBoardViewController *welcomeController = [segue destinationViewController];
+    if ([[segue identifier] isEqualToString: kFIFAGoMainSectionIndentifier]){
+        //[segue destinationViewController];
     }
 }
 

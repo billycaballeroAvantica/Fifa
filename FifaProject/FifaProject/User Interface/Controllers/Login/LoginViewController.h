@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AVTBaseViewController.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : AVTBaseViewController
 @property (weak, nonatomic) IBOutlet UITextField *username_textfield;
 @property (weak, nonatomic) IBOutlet UITextField *password_textfield;
 - (IBAction)goSignIn:(id)sender;

@@ -10,6 +10,8 @@
 		66319CFC1AB1D6CF004F09F9 /* FifaProjectTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66319CFB1AB1D6CF004F09F9 /* FifaProjectTests-Info.plist */; };
 		66319D031AB1D723004F09F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 66319D011AB1D723004F09F9 /* InfoPlist.strings */; };
 		66319D221AB23E0F004F09F9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66319D211AB23E0F004F09F9 /* Security.framework */; };
+		663D6E701AB37B0300C3CF33 /* ClubsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 663D6E6F1AB37B0300C3CF33 /* ClubsCollectionViewController.m */; };
+		663D6E731AB3807E00C3CF33 /* ClubsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 663D6E721AB3807E00C3CF33 /* ClubsCollectionViewCell.m */; };
 		666357B31AB32D3400C631E9 /* SessionRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 6663578F1AB32D3400C631E9 /* SessionRepository.m */; };
 		666357B41AB32D3400C631E9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 666357931AB32D3400C631E9 /* User.m */; };
 		666357B51AB32D3400C631E9 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 666357981AB32D3400C631E9 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -19,10 +21,13 @@
 		666357BB1AB32D3400C631E9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 666357AB1AB32D3400C631E9 /* InfoPlist.strings */; };
 		666357BC1AB32D3400C631E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 666357AC1AB32D3400C631E9 /* main.m */; };
 		666357BD1AB32D3400C631E9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666357B11AB32D3400C631E9 /* LoginViewController.m */; };
-		666357C41AB32FFA00C631E9 /* DashBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666357C31AB32FFA00C631E9 /* DashBoardViewController.m */; };
 		669616E01AB33D5B0036A0EE /* libCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 669616DF1AB33D5B0036A0EE /* libCommon.a */; };
 		669616E41AB33DEC0036A0EE /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669616E21AB33DEC0036A0EE /* Main_iPad.storyboard */; };
 		669616E51AB33DEC0036A0EE /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669616E31AB33DEC0036A0EE /* Main_iPhone.storyboard */; };
+		669616E91AB34D600036A0EE /* TopTenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669616E81AB34D600036A0EE /* TopTenViewController.m */; };
+		669616EC1AB34D740036A0EE /* ClubsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669616EB1AB34D740036A0EE /* ClubsViewController.m */; };
+		669616F41AB358380036A0EE /* TopTenSkillTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669616F31AB358380036A0EE /* TopTenSkillTableViewController.m */; };
+		669616F81AB368FA0036A0EE /* SkillPlayersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 669616F71AB368FA0036A0EE /* SkillPlayersTableViewCell.m */; };
 		CE6086B31977171A0021B562 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6086B21977171A0021B562 /* Foundation.framework */; };
 		CE6086B51977171A0021B562 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6086B41977171A0021B562 /* CoreGraphics.framework */; };
 		CE6086B71977171A0021B562 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6086B61977171A0021B562 /* UIKit.framework */; };
@@ -44,6 +49,10 @@
 		66319CFB1AB1D6CF004F09F9 /* FifaProjectTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "FifaProjectTests-Info.plist"; path = "FifaProjectTests/FifaProjectTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		66319D021AB1D723004F09F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = FifaProjectTests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		66319D211AB23E0F004F09F9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		663D6E6E1AB37B0300C3CF33 /* ClubsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClubsCollectionViewController.h; sourceTree = "<group>"; };
+		663D6E6F1AB37B0300C3CF33 /* ClubsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClubsCollectionViewController.m; sourceTree = "<group>"; };
+		663D6E711AB3807E00C3CF33 /* ClubsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClubsCollectionViewCell.h; sourceTree = "<group>"; };
+		663D6E721AB3807E00C3CF33 /* ClubsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClubsCollectionViewCell.m; sourceTree = "<group>"; };
 		6663578E1AB32D3400C631E9 /* SessionRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionRepository.h; sourceTree = "<group>"; };
 		6663578F1AB32D3400C631E9 /* SessionRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionRepository.m; sourceTree = "<group>"; };
 		666357921AB32D3400C631E9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -59,11 +68,17 @@
 		666357AC1AB32D3400C631E9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		666357B01AB32D3400C631E9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		666357B11AB32D3400C631E9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		666357C21AB32FFA00C631E9 /* DashBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashBoardViewController.h; sourceTree = "<group>"; };
-		666357C31AB32FFA00C631E9 /* DashBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashBoardViewController.m; sourceTree = "<group>"; };
 		669616DF1AB33D5B0036A0EE /* libCommon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCommon.a; path = "../Common/build/Debug-iphoneos/libCommon.a"; sourceTree = "<group>"; };
 		669616E21AB33DEC0036A0EE /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
 		669616E31AB33DEC0036A0EE /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		669616E71AB34D600036A0EE /* TopTenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTenViewController.h; sourceTree = "<group>"; };
+		669616E81AB34D600036A0EE /* TopTenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTenViewController.m; sourceTree = "<group>"; };
+		669616EA1AB34D740036A0EE /* ClubsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClubsViewController.h; sourceTree = "<group>"; };
+		669616EB1AB34D740036A0EE /* ClubsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClubsViewController.m; sourceTree = "<group>"; };
+		669616F21AB358380036A0EE /* TopTenSkillTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTenSkillTableViewController.h; sourceTree = "<group>"; };
+		669616F31AB358380036A0EE /* TopTenSkillTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTenSkillTableViewController.m; sourceTree = "<group>"; };
+		669616F61AB368FA0036A0EE /* SkillPlayersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkillPlayersTableViewCell.h; sourceTree = "<group>"; };
+		669616F71AB368FA0036A0EE /* SkillPlayersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkillPlayersTableViewCell.m; sourceTree = "<group>"; };
 		CE6086AF1977171A0021B562 /* FifaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FifaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6086B21977171A0021B562 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE6086B41977171A0021B562 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -274,7 +289,9 @@
 		666357AE1AB32D3400C631E9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				666357C11AB32FC700C631E9 /* Dashboard */,
+				669616F01AB357640036A0EE /* Clubs */,
+				669616F11AB357640036A0EE /* TopTen */,
+				669616E61AB34D2E0036A0EE /* MainSections */,
 				666357AF1AB32D3400C631E9 /* Login */,
 			);
 			path = Controllers;
@@ -292,17 +309,9 @@
 		666357B21AB32D3400C631E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				669616F51AB368D30036A0EE /* Cells */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		666357C11AB32FC700C631E9 /* Dashboard */ = {
-			isa = PBXGroup;
-			children = (
-				666357C21AB32FFA00C631E9 /* DashBoardViewController.h */,
-				666357C31AB32FFA00C631E9 /* DashBoardViewController.m */,
-			);
-			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		669616E11AB33DEC0036A0EE /* Story Boards */ = {
@@ -312,6 +321,46 @@
 				669616E31AB33DEC0036A0EE /* Main_iPhone.storyboard */,
 			);
 			path = "Story Boards";
+			sourceTree = "<group>";
+		};
+		669616E61AB34D2E0036A0EE /* MainSections */ = {
+			isa = PBXGroup;
+			children = (
+				669616E71AB34D600036A0EE /* TopTenViewController.h */,
+				669616E81AB34D600036A0EE /* TopTenViewController.m */,
+				669616EA1AB34D740036A0EE /* ClubsViewController.h */,
+				669616EB1AB34D740036A0EE /* ClubsViewController.m */,
+			);
+			path = MainSections;
+			sourceTree = "<group>";
+		};
+		669616F01AB357640036A0EE /* Clubs */ = {
+			isa = PBXGroup;
+			children = (
+				663D6E6E1AB37B0300C3CF33 /* ClubsCollectionViewController.h */,
+				663D6E6F1AB37B0300C3CF33 /* ClubsCollectionViewController.m */,
+			);
+			path = Clubs;
+			sourceTree = "<group>";
+		};
+		669616F11AB357640036A0EE /* TopTen */ = {
+			isa = PBXGroup;
+			children = (
+				669616F21AB358380036A0EE /* TopTenSkillTableViewController.h */,
+				669616F31AB358380036A0EE /* TopTenSkillTableViewController.m */,
+			);
+			path = TopTen;
+			sourceTree = "<group>";
+		};
+		669616F51AB368D30036A0EE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				669616F61AB368FA0036A0EE /* SkillPlayersTableViewCell.h */,
+				669616F71AB368FA0036A0EE /* SkillPlayersTableViewCell.m */,
+				663D6E711AB3807E00C3CF33 /* ClubsCollectionViewCell.h */,
+				663D6E721AB3807E00C3CF33 /* ClubsCollectionViewCell.m */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		CE6086A61977171A0021B562 = {
@@ -463,13 +512,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669616EC1AB34D740036A0EE /* ClubsViewController.m in Sources */,
+				669616F41AB358380036A0EE /* TopTenSkillTableViewController.m in Sources */,
+				669616F81AB368FA0036A0EE /* SkillPlayersTableViewCell.m in Sources */,
+				669616E91AB34D600036A0EE /* TopTenViewController.m in Sources */,
+				663D6E731AB3807E00C3CF33 /* ClubsCollectionViewCell.m in Sources */,
 				666357BC1AB32D3400C631E9 /* main.m in Sources */,
 				666357B91AB32D3400C631E9 /* AppDelegate.m in Sources */,
 				666357BD1AB32D3400C631E9 /* LoginViewController.m in Sources */,
+				663D6E701AB37B0300C3CF33 /* ClubsCollectionViewController.m in Sources */,
 				666357B41AB32D3400C631E9 /* User.m in Sources */,
 				666357B31AB32D3400C631E9 /* SessionRepository.m in Sources */,
 				666357B51AB32D3400C631E9 /* KeychainItemWrapper.m in Sources */,
-				666357C41AB32FFA00C631E9 /* DashBoardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
