@@ -7,6 +7,7 @@
 //
 
 #import "DashBoardViewController.h"
+#import "SessionRepository.h"
 
 @implementation DashBoardViewController
 
@@ -17,7 +18,7 @@
 }
 
 - (void)setUpElements{
-    self.username_label.text = self.name_current_user;
+    self.username_label.text = [[SessionRepository sharedRepository] getUsername];
 }
 
 @end

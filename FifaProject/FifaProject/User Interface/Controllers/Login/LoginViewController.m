@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "SessionRepository.h"
-//#import "AVTAlertViewFactory.h"
+#import "AVTAlertViewFactory.h"
 #import "DashBoardViewController.h"
 
 @implementation LoginViewController
@@ -92,12 +92,13 @@
 }
 
 - (void) logginCurrentUser {
-    //if ([[SessionRepository sharedRepository] loginValidateFields:self.username_textfield.text userPassword:self.password_textfield.text ] ){
-        //[[SessionRepository sharedRepository] setCurrentUser:self.username_textfield.text userPassword:self.password_textfield.text];
+    if ([[SessionRepository sharedRepository] loginValidateFields:self.username_textfield.text userPassword:self.password_textfield.text ] ){
+        [[SessionRepository sharedRepository] setCurrentUser:self.username_textfield.text userPassword:self.password_textfield.text];
         [self performSegueWithIdentifier:@"goWelcomeViewController" sender:self];
-    //}else{
-   //     [[AVTAlertViewFactory sharedFactory]  alertViewWithTitle: @"Invalid Fields" andMessage: @"Incorrect User name and password." ];
-    //}
+    }else{
+        UIAlertView *alert = [[AVTAlertViewFactory sharedFactory]  alertViewWithTitle: @"Invalid Fields" andMessage: @"Incorrect User name and password." ];
+        [alert show];
+    }
 }
 
 #pragma mark -
@@ -127,8 +128,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"goWelcomeViewController"]){
-        DashBoardViewController *welcomeController = [segue destinationViewController];
-        welcomeController.name_current_user = self.username_textfield.text;
+        //DashBoardViewController *welcomeController = [segue destinationViewController];
     }
 }
 
