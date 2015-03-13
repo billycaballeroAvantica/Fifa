@@ -1,7 +1,7 @@
 /*
  File: KeychainItemWrapper.m
  Abstract:
- Objective-C wrapper for ac__bridge cessing a single keychain item.
+ Objective-C wrapper for accessing a single keychain item.
  
  Version: 1.2
  
@@ -55,19 +55,19 @@
  These are the default constants and their respective types,
  available for the kSecClassGenericPassword Keychain Item class:
  
- kSecAttrAccessGroup			-		CFStringRef
- kSecAttrCreationDate		-		CFDateRef
- kSecAttrModificationDate    -		CFDateRef
- kSecAttrDescription			-		CFStringRef
- kSecAttrComment				-		CFStringRef
- kSecAttrCreator				-		CFNumberRef
- kSecAttrType                -		CFNumberRef
- kSecAttrLabel				-		CFStringRef
- kSecAttrIsInvisible			-		CFBooleanRef
- kSecAttrIsNegative			-		CFBooleanRef
- kSecAttrAccount				-		CFStringRef
- kSecAttrService				-		CFStringRef
- kSecAttrGeneric				-		CFDataRef
+ kSecAttrAccessGroup         -       CFStringRef
+ kSecAttrCreationDate        -       CFDateRef
+ kSecAttrModificationDate    -       CFDateRef
+ kSecAttrDescription         -       CFStringRef
+ kSecAttrComment             -       CFStringRef
+ kSecAttrCreator             -       CFNumberRef
+ kSecAttrType                -       CFNumberRef
+ kSecAttrLabel               -       CFStringRef
+ kSecAttrIsInvisible         -       CFBooleanRef
+ kSecAttrIsNegative          -       CFBooleanRef
+ kSecAttrAccount             -       CFStringRef
+ kSecAttrService             -       CFStringRef
+ kSecAttrGeneric             -       CFDataRef
  
  See the header file Security/SecItem.h for more details.
  
@@ -100,8 +100,8 @@
         // items which may be included by the same application.
         genericPasswordQuery = [[NSMutableDictionary alloc] init];
         
-        [genericPasswordQuery setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
-        [genericPasswordQuery setObject:identifier forKey:(__bridge id)kSecAttrGeneric];
+        [genericPasswordQuery setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];
+        [genericPasswordQuery setObject:identifier forKey:(id)kSecAttrGeneric];
         
         // The keychain access group attribute determines if this item can be shared
         // amongst multiple apps whose code signing entitlements contain the same keychain access group.
@@ -122,20 +122,20 @@
         }
         
         // Use the proper search constants, return only the attributes of the first match.
-        [genericPasswordQuery setObject:(__bridge id)kSecMatchLimitOne forKey:(__bridge id)kSecMatchLimit];
-        [genericPasswordQuery setObject:(id)kCFBooleanTrue forKey:(__bridge id)kSecReturnAttributes];
+        [genericPasswordQuery setObject:(id)kSecMatchLimitOne forKey:(id)kSecMatchLimit];
+        [genericPasswordQuery setObject:(id)kCFBooleanTrue forKey:(id)kSecReturnAttributes];
         
         NSDictionary *tempQuery = [NSDictionary dictionaryWithDictionary:genericPasswordQuery];
         
         NSMutableDictionary *outDictionary = nil;
         
-        if (! SecItemCopyMatching((__bridge CFDictionaryRef)tempQuery, (CFTypeRef *)&outDictionary) == noErr)
+        if (! SecItemCopyMatching((CFDictionaryRef)tempQuery, (CFTypeRef *)&outDictionary) == noErr)
         {
             // Stick these default values into keychain item if nothing found.
             [self resetKeychainItem];
             
             // Add the generic attribute and the keychain access group.
-            [keychainItemData setObject:identifier forKey:(__bridge id)kSecAttrGeneric];
+            [keychainItemData setObject:identifier forKey:(id)kSecAttrGeneric];
             if (accessGroup != nil)
             {
 #if TARGET_IPHONE_SIMULATOR

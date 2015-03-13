@@ -17,13 +17,15 @@
 
 - (void) setCurrentUser:(NSString *)user_name userPassword:(NSString *)password {
     KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"FifaAvanticaLogin" accessGroup:nil];
-    [keychainItem setObject: user_name forKey:@"userName"];
-    [keychainItem setObject: password forKey: @"password"];
+    [keychainItem setObject:(__bridge id)(kSecAttrAccessibleWhenUnlocked) forKey:(__bridge id)(kSecAttrAccessible)];
+    [keychainItem setObject: user_name forKey:(__bridge id)(kSecAttrAccount)];
+    [keychainItem setObject: password forKey:(__bridge id)(kSecValueData)];
 }
 
 - (NSString *) getUsername{
     KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"FifaAvanticaLogin" accessGroup:nil];
-    NSString *username = [keychainItem objectForKey: @"userName"];
+    [keychainItem setObject:(__bridge id)(kSecAttrAccessibleWhenUnlocked) forKey:(__bridge id)(kSecAttrAccessible)];
+    NSString *username = [keychainItem objectForKey: (__bridge id)(kSecAttrAccount)];
     return username;
 }
 
