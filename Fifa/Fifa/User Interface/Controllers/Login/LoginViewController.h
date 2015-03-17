@@ -10,14 +10,14 @@
 #import "AVTBaseViewController.h"
 
 @interface LoginViewController : AVTBaseViewController
-@property (weak, nonatomic) IBOutlet UITextField *username_textfield;
-@property (weak, nonatomic) IBOutlet UITextField *password_textfield;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextfield;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextfield;
 - (IBAction)goSignIn:(id)sender;
 
 @property UITapGestureRecognizer * tapRecognizer;
 @property UITextField *activeTextField;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *login_bottom_contraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *loginBottomContraint;
 @property CGSize keyboardSize;
-@property (weak, nonatomic) IBOutlet UIButton *btn_login;
+@property (weak, nonatomic) IBOutlet UIButton *btnLogin;
 
 @end

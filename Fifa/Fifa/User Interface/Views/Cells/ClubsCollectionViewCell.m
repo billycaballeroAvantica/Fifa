@@ -20,12 +20,12 @@
     self.backgroundColor = UIColorFromRGB(colorInt);
 }
 
--(void)setSkillImage:(NSString *)image_name{
-    self.club_image_view.image = [UIImage imageNamed: image_name];
+-(void)setSkillImage:(NSString *)imageName{
+    self.clubImageView.image = [UIImage imageNamed: imageName];
 }
 
 -(void)setSkillName:(NSString *)name{
-    self.club_name_label.text = name;
+    self.clubNameLabel.text = name;
     
 }
 

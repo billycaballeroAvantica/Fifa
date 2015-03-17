@@ -12,15 +12,16 @@
 @implementation FIFATopTenServiceAgent
 
 
-- (void)requestTopTenWithParameters:(NSDictionary *)params
+- (void)requestTopTenWithSkill:(NSString *)skill
                     successCallback:(void (^)(id translatedObject))success
                     failureCallback:(void (^)(NSError *error))failure{
-    [self callServiceWithURL: @"topten/pace" httpMethod:AVTHTTPMethodGET parameters:params
+    NSString *urlParams = [[@"topten/" stringByAppendingString:skill] lowercaseString];
+    [self callServiceWithURL: urlParams httpMethod:AVTHTTPMethodGET parameters:nil
                  translation:^id(id responseObject) {
-        return responseObject;
+        id json = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+        return json;
     } successCallback:^(id translatedObject) {
-        id json = [NSJSONSerialization JSONObjectWithData:translatedObject options:0 error:nil];
-        success(json);
+        success(translatedObject);
     } failureCallback:^(NSError *error) {
         failure(error);
     }];
@@ -32,7 +33,7 @@
     static FIFATopTenServiceAgent *_sharedAgent = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedAgent = [[FIFATopTenServiceAgent alloc] initWithBaseURL:[NSURL URLWithString: kFIFABaseUrl ]];
+        _sharedAgent = [[FIFATopTenServiceAgent alloc] initWithBaseUrl];
         _sharedAgent.responseSerializer =  [AFHTTPResponseSerializer serializer];
     });
     

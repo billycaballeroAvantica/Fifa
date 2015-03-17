@@ -10,12 +10,12 @@
 
 @implementation SkillPlayersTableViewCell
 
--(void)setSkillImage:(NSString *)image_name{
-    self.skill_image_imageview.image = [UIImage imageNamed: image_name];
+-(void)setSkillImage:(NSString *)imageName{
+    self.skillImageImageview.image = [UIImage imageNamed: imageName];
 }
 
 -(void)setSkillName:(NSString *)name{
-    self.skill_name_label.text = name;
+    self.skillNameLabel.text = name;
    
 }
 

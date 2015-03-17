@@ -10,10 +10,10 @@
 
 @interface SkillPlayersTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *skill_name_label;
-@property (weak, nonatomic) IBOutlet UIImageView *skill_image_imageview;
+@property (weak, nonatomic) IBOutlet UILabel *skillNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *skillImageImageview;
 
--(void)setSkillImage: (NSString *)image_name;
+-(void)setSkillImage: (NSString *)imageName;
 -(void)setSkillName: (NSString *)name;
 
 @end

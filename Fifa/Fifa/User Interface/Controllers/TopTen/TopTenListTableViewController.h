@@ -10,6 +10,6 @@
 
 @interface TopTenListTableViewController : AVTBaseTableViewController
 
-@property NSArray *players;
+@property (strong, atomic) NSArray *players;
 
 @end

@@ -8,8 +8,8 @@
 
 #import "AVTBaseServiceAgent.h"
 
-extern NSString* const kFIFABaseUrl;
-
 @interface FIFABaseServiceAgent : AVTBaseServiceAgent
+
+-(instancetype)initWithBaseUrl;
 
 @end

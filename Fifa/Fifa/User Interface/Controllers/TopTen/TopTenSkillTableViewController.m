@@ -8,6 +8,7 @@
 
 #import "TopTenSkillTableViewController.h"
 #import "SkillPlayersTableViewCell.h"
+#import "TopTenListViewController.h"
 
 @implementation TopTenSkillTableViewController
 
@@ -35,4 +36,12 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100.0;
 }
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if( [segue.identifier  isEqual: @"topTenListVCIdentifier"] ){
+        TopTenListViewController *topTenListViewController = segue.destinationViewController;
+        topTenListViewController.playerSkill = self.skillPlayers[self.tableView.indexPathForSelectedRow.row];
+    }
+}
+
 @end

@@ -10,12 +10,12 @@
 
 @interface ClubsCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *club_image_view;
-@property (weak, nonatomic) IBOutlet UILabel *club_name_label;
+@property (weak, nonatomic) IBOutlet UIImageView *clubImageView;
+@property (weak, nonatomic) IBOutlet UILabel *clubNameLabel;
 
 
 -(void) setBackgroundRandom: (NSInteger) indexColor;
--(void) setSkillImage: (NSString *)image_name;
+-(void) setSkillImage: (NSString *)imageName;
 -(void) setSkillName: (NSString *)name;
 
 @end

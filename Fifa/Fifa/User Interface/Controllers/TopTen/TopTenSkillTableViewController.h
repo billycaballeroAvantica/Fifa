@@ -11,6 +11,6 @@
 
 @interface TopTenSkillTableViewController : AVTBaseTableViewController
 
-@property NSArray *skillPlayers;
+@property (strong, nonatomic) NSArray *skillPlayers;
 
 @end

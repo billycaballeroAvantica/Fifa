@@ -12,5 +12,6 @@
 @interface TopTenListViewController : AVTBaseViewController
 
 @property (weak, nonatomic) TopTenListTableViewController* tableViewController;
+@property (weak, nonatomic) NSString* playerSkill;
 
 @end

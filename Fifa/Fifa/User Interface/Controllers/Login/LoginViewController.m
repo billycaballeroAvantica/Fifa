@@ -41,13 +41,13 @@ static NSString * const kFIFAGoMainSectionIndentifier = @"goMainSectionsIdentifi
 - (void) setConstantContraints {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat constantHeight = screenRect.size.height * 3.5/10  ;
-    self.login_bottom_contraint.constant = constantHeight;
+    self.loginBottomContraint.constant = constantHeight;
 }
 
 - (void) setUpElements {
-    self.username_textfield.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.password_textfield.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.btn_login.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.usernameTextfield.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.passwordTextfield.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.btnLogin.layer.borderColor = [UIColor whiteColor].CGColor;
 }
 
 
@@ -77,7 +77,7 @@ static NSString * const kFIFAGoMainSectionIndentifier = @"goMainSectionsIdentifi
 -(void) keyboardWillShow:(NSNotification *) note
 {
     self.keyboardSize = [[[note userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    self.login_bottom_contraint.constant = self.keyboardSize.height;
+    self.loginBottomContraint.constant = self.keyboardSize.height;
     [self.view addGestureRecognizer: self.tapRecognizer];
 }
 
@@ -93,8 +93,8 @@ static NSString * const kFIFAGoMainSectionIndentifier = @"goMainSectionsIdentifi
 }
 
 - (void) logginCurrentUser {
-    if ([[SessionRepository sharedRepository] loginValidateFields:self.username_textfield.text userPassword:self.password_textfield.text ] ){
-        [[SessionRepository sharedRepository] setCurrentUser:self.username_textfield.text userPassword:self.password_textfield.text];
+    if ([[SessionRepository sharedRepository] loginValidateFields:self.usernameTextfield.text userPassword:self.passwordTextfield.text ] ){
+        [[SessionRepository sharedRepository] setCurrentUser:self.usernameTextfield.text userPassword:self.passwordTextfield.text];
         [self performSegueWithIdentifier:kFIFAGoMainSectionIndentifier sender:self];
     }else{
         UIAlertView *alert = [[AVTAlertViewFactory sharedFactory]  alertViewWithTitle: @"Invalid Fields" andMessage: @"Incorrect User name and password." ];
@@ -115,9 +115,9 @@ static NSString * const kFIFAGoMainSectionIndentifier = @"goMainSectionsIdentifi
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if (textField == self.username_textfield) {
-        [self.password_textfield becomeFirstResponder];
-    } else if (textField == self.password_textfield) {
+    if (textField == self.usernameTextfield) {
+        [self.passwordTextfield becomeFirstResponder];
+    } else if (textField == self.passwordTextfield) {
         [textField resignFirstResponder];
         [self logginCurrentUser];
     }

@@ -36,6 +36,9 @@
 		665C153A1AB7860D0080F810 /* libCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 665C15391AB7860D0080F810 /* libCommon.a */; };
 		665C153E1AB789990080F810 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665C153D1AB789990080F810 /* SDWebImage.framework */; };
 		665C15401AB78A160080F810 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665C153F1AB78A160080F810 /* ImageIO.framework */; };
+		66676F231AB88B950064EA7D /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66676F221AB88B950064EA7D /* PlayerDetailViewController.m */; };
+		66676F261AB89C760064EA7D /* FIFAPlayerServiceAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 66676F251AB89C760064EA7D /* FIFAPlayerServiceAgent.m */; };
+		66676F2A1AB8B4F60064EA7D /* ImageDownloadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66676F291AB8B4F60064EA7D /* ImageDownloadHelper.m */; };
 		CE6086B31977171A0021B562 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6086B21977171A0021B562 /* Foundation.framework */; };
 		CE6086B51977171A0021B562 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6086B41977171A0021B562 /* CoreGraphics.framework */; };
 		CE6086B71977171A0021B562 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6086B61977171A0021B562 /* UIKit.framework */; };
@@ -101,6 +104,12 @@
 		665C153B1AB786D60080F810 /* Fifa-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Fifa-Prefix.pch"; sourceTree = "<group>"; };
 		665C153D1AB789990080F810 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 		665C153F1AB78A160080F810 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		66676F211AB88B950064EA7D /* PlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
+		66676F221AB88B950064EA7D /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
+		66676F241AB89C760064EA7D /* FIFAPlayerServiceAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIFAPlayerServiceAgent.h; sourceTree = "<group>"; };
+		66676F251AB89C760064EA7D /* FIFAPlayerServiceAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIFAPlayerServiceAgent.m; sourceTree = "<group>"; };
+		66676F281AB8B4F60064EA7D /* ImageDownloadHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadHelper.h; sourceTree = "<group>"; };
+		66676F291AB8B4F60064EA7D /* ImageDownloadHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadHelper.m; sourceTree = "<group>"; };
 		CE6086AF1977171A0021B562 /* Fifa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fifa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6086B21977171A0021B562 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE6086B41977171A0021B562 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -217,6 +226,8 @@
 				665C14DF1AB7802E0080F810 /* FIFATopTenServiceAgent.h */,
 				665C14E01AB7802E0080F810 /* FIFATopTenServiceAgent.m */,
 				665C14E11AB7802E0080F810 /* NSErrors */,
+				66676F241AB89C760064EA7D /* FIFAPlayerServiceAgent.h */,
+				66676F251AB89C760064EA7D /* FIFAPlayerServiceAgent.m */,
 			);
 			path = "Service Agents";
 			sourceTree = "<group>";
@@ -231,8 +242,8 @@
 		665C14E21AB7802E0080F810 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				66676F271AB8B4E90064EA7D /* Helpers */,
 				665C14E31AB7802E0080F810 /* Factories */,
-				665C14E41AB7802E0080F810 /* Helpers */,
 				665C14E51AB7802E0080F810 /* Resources */,
 			);
 			path = Utility;
@@ -243,13 +254,6 @@
 			children = (
 			);
 			path = Factories;
-			sourceTree = "<group>";
-		};
-		665C14E41AB7802E0080F810 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		665C14E51AB7802E0080F810 /* Resources */ = {
@@ -318,6 +322,7 @@
 		665C14F31AB7802E0080F810 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				66676F201AB88B880064EA7D /* Player */,
 				665C14F41AB7802E0080F810 /* Clubs */,
 				665C14F71AB7802E0080F810 /* Login */,
 				665C14FA1AB7802E0080F810 /* MainSections */,
@@ -407,6 +412,24 @@
 				665C152F1AB781A70080F810 /* FifaTests.m */,
 			);
 			path = FifaTests;
+			sourceTree = "<group>";
+		};
+		66676F201AB88B880064EA7D /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				66676F211AB88B950064EA7D /* PlayerDetailViewController.h */,
+				66676F221AB88B950064EA7D /* PlayerDetailViewController.m */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		66676F271AB8B4E90064EA7D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				66676F281AB8B4F60064EA7D /* ImageDownloadHelper.h */,
+				66676F291AB8B4F60064EA7D /* ImageDownloadHelper.m */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		CE6086A61977171A0021B562 = {
@@ -544,6 +567,7 @@
 				665C15231AB7802E0080F810 /* TopTenViewController.m in Sources */,
 				665C151A1AB7802E0080F810 /* FIFATopTenServiceAgent.m in Sources */,
 				665C15171AB7802E0080F810 /* User.m in Sources */,
+				66676F261AB89C760064EA7D /* FIFAPlayerServiceAgent.m in Sources */,
 				665C151C1AB7802E0080F810 /* AppDelegate.m in Sources */,
 				665C15161AB7802E0080F810 /* SessionRepository.m in Sources */,
 				665C15191AB7802E0080F810 /* FIFABaseServiceAgent.m in Sources */,
@@ -555,8 +579,10 @@
 				665C151F1AB7802E0080F810 /* main.m in Sources */,
 				665C15201AB7802E0080F810 /* ClubsCollectionViewController.m in Sources */,
 				665C15221AB7802E0080F810 /* ClubsViewController.m in Sources */,
+				66676F2A1AB8B4F60064EA7D /* ImageDownloadHelper.m in Sources */,
 				665C152B1AB7802E0080F810 /* TopTenListTableViewCell.m in Sources */,
 				665C15261AB7802E0080F810 /* TopTenSkillTableViewController.m in Sources */,
+				66676F231AB88B950064EA7D /* PlayerDetailViewController.m in Sources */,
 				665C15181AB7802E0080F810 /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,7 @@
 
 + (instancetype)sharedAgent;
 
-- (void)requestTopTenWithParameters: (NSDictionary *)params
+- (void)requestTopTenWithSkill: (NSString *)skill
        successCallback:(void (^)(id translatedObject))success
        failureCallback:(void (^)(NSError *error))failure;
 

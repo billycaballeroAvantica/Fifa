@@ -8,16 +8,20 @@
 
 #import "TopTenListViewController.h"
 #import "FIFATopTenServiceAgent.h"
-
+#import "UIColor+CustomColors.h"
 
 @implementation TopTenListViewController
 
 - (void) viewDidLoad{
-    [[FIFATopTenServiceAgent sharedAgent] requestTopTenWithParameters: nil successCallback:^(id json) {
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [[MRProgressOverlayView showOverlayAddedTo:self.view title: @"Loading" mode: MRProgressOverlayViewModeIndeterminate animated:TRUE] setTintColor: [UIColor blackColor]];
+    [[FIFATopTenServiceAgent sharedAgent] requestTopTenWithSkill: self.playerSkill successCallback:^(id json) {
         self.tableViewController.players = json;
-        self.tableViewController.tableView.reloadData;
+        [self.tableViewController.tableView reloadData];
+        [MRProgressOverlayView dismissOverlayForView:self.view animated:TRUE];
     } failureCallback:^(NSError *error) {
         NSLog(@"failure");
+        [MRProgressOverlayView dismissOverlayForView:self.view animated:TRUE];
     }];
 }
 
