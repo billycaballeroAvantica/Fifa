@@ -7,13 +7,14 @@
 //
 
 #import "FIFABaseServiceAgent.h"
+#import "Player.h"
 
 @interface FIFATopTenServiceAgent : FIFABaseServiceAgent
 
 + (instancetype)sharedAgent;
 
 - (void)requestTopTenWithSkill: (NSString *)skill
-       successCallback:(void (^)(id translatedObject))success
+       successCallback:(void (^)(NSMutableArray *players))success
        failureCallback:(void (^)(NSError *error))failure;
 
 @end

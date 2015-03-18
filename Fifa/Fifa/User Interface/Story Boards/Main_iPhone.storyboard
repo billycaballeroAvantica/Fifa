@@ -424,6 +424,7 @@
                                 <connections>
                                     <outlet property="clubImageView" destination="Boy-zA-FWm" id="k2E-qB-Utb"/>
                                     <outlet property="clubNameLabel" destination="NiQ-rg-rW0" id="xjD-aB-AEv"/>
+                                    <segue destination="drD-Hb-rS1" kind="push" identifier="clubPlayerListViewControllerIdentifier" id="BIX-TZ-Z6P"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -437,17 +438,44 @@
             </objects>
             <point key="canvasLocation" x="1790" y="1053.5"/>
         </scene>
-        <!--Top Ten List Table View Controller-->
+        <!--Clubs List View Controller-->
+        <scene sceneID="rz2-LJ-oBJ">
+            <objects>
+                <viewController id="drD-Hb-rS1" customClass="ClubsListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kJp-NS-lur"/>
+                        <viewControllerLayoutGuide type="bottom" id="BLy-Fy-Szc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XNs-Ux-aj9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yml-Xq-Xic">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <connections>
+                                    <segue destination="p8n-Jc-Qu1" kind="embed" identifier="tableClubsListSegueIdentifier" id="CUe-vp-lGT"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ez0-sZ-dao"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w8f-Mg-Mvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2222" y="1053.5"/>
+        </scene>
+        <!--Player List Table View Controller-->
         <scene sceneID="yf0-uN-TOX">
             <objects>
-                <tableViewController id="p8n-Jc-Qu1" customClass="TopTenListTableViewController" sceneMemberID="viewController">
+                <tableViewController id="p8n-Jc-Qu1" customClass="PlayerListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qbi-NS-GQR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.1764705882" green="0.3294117647" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topTenListCellIdentifier" rowHeight="100" id="Mkg-jZ-AE4" customClass="TopTenListTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topTenListCellIdentifier" rowHeight="100" id="Mkg-jZ-AE4" customClass="PlayerListTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mkg-jZ-AE4" id="mh9-wx-cQ1">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -524,7 +552,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7o-KN-fzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2624" y="406.5"/>
+            <point key="canvasLocation" x="2752" y="744.5"/>
         </scene>
         <!--Player Detail View Controller-->
         <scene sceneID="hs7-Cl-8QM">
@@ -785,7 +813,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hmz-LV-sxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3067" y="409.5"/>
+            <point key="canvasLocation" x="3195" y="747.5"/>
         </scene>
     </scenes>
     <resources>
@@ -799,4 +827,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="CUe-vp-lGT"/>
+    </inferredMetricsTieBreakers>
 </document>

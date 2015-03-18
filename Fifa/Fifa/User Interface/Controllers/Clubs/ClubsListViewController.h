@@ -1,17 +1,18 @@
 //
-//  TopTenListViewController.h
-//  FifaProject
+//  ClubsListViewController.h
+//  Fifa
 //
-//  Created by Billy.Caballero on 3/16/15.
+//  Created by Billy.Caballero on 3/18/15.
 //  Copyright (c) 2015 Avantica Technologies. All rights reserved.
 //
 
 #import "AVTBaseViewController.h"
 #import "PlayerListTableViewController.h"
+#import "Club.h"
 
-@interface TopTenListViewController : AVTBaseViewController
+@interface ClubsListViewController : AVTBaseViewController
 
 @property (weak, nonatomic) PlayerListTableViewController* tableViewController;
-@property (weak, nonatomic) NSString* playerSkill;
+@property (strong, nonatomic) Club* club;
 
 @end

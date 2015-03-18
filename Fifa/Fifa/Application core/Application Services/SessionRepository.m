@@ -33,4 +33,14 @@
     return !([user_name isEqualToString:@""] && [password isEqualToString:@""]);
 }
 
++ (instancetype)sharedRepository
+{
+    static id _sharedRepository = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedRepository = [[self class] new];
+    });
+    return _sharedRepository;
+}
+
 @end

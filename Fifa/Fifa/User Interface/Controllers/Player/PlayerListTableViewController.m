@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 Avantica Technologies. All rights reserved.
 //
 
-#import "TopTenListTableViewController.h"
-#import "TopTenListTableViewCell.h"
+#import "PlayerListTableViewController.h"
+#import "PlayerListTableViewCell.h"
 #import "PlayerDetailViewController.h"
 #import "UIColor+CustomColors.h"
+#import "Player.h"
 
-@implementation TopTenListTableViewController
+@implementation PlayerListTableViewController
 
 - (void) viewDidLoad{
-    self.players = @[];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -27,11 +27,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"topTenListCellIdentifier";
-    TopTenListTableViewCell *cell = (TopTenListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    NSDictionary *player = self.players[indexPath.row];
-    [cell fillCell: player[@"first_name"] profileImage: player[@"base_id"] clubImage: player[@"club_id"] countryImage: player[@"nation_id"]];
+    PlayerListTableViewCell *cell = (PlayerListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    Player *player = self.players[indexPath.row];
+    [cell fillCell: player];
     if (indexPath.row % 2 != 0) {
         [cell setBackgroundColor: UIColorFromRGB(0xC4654E)];
+    }else{
+        [cell setBackgroundColor: UIColorFromRGB(0x03B54)];
     }
     return cell;
 }
@@ -44,7 +46,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier  isEqual: @"playerDetailViewControllerIdentifier"]) {
         PlayerDetailViewController *playerDetailViewController = segue.destinationViewController;
-        playerDetailViewController.playerResourceId = self.players[self.tableView.indexPathForSelectedRow.row][@"resource_id"];
+        Player *player = self.players[self.tableView.indexPathForSelectedRow.row];
+        playerDetailViewController.playerResourceId = player.resourceId;
     }
 }
 

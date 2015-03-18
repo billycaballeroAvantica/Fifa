@@ -14,4 +14,6 @@
 - (BOOL) loginValidateFields: (NSString *)user_name userPassword:(NSString *)password;
 - (NSString *) getUsername;
 
++ (instancetype)sharedRepository;
+
 @end
