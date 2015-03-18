@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Club.h"
 
 @interface ClubsCollectionViewCell : UICollectionViewCell
 
@@ -14,8 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *clubNameLabel;
 
 
--(void) setBackgroundRandom: (NSInteger) indexColor;
--(void) setSkillImage: (NSString *)imageName;
--(void) setSkillName: (NSString *)name;
+-(void)setBackgroundRandom: (NSInteger) indexColor;
+-(void)fillElements: (Club *)club;
 
 @end

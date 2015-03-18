@@ -7,13 +7,14 @@
 //
 
 #import "FIFABaseServiceAgent.h"
+#import "Player.h"
 
 @interface FIFAPlayerServiceAgent : FIFABaseServiceAgent
 
 + (instancetype)sharedAgent;
 
 - (void)requestPlayerWithResourceId: (NSString *)resourceId
-               successCallback:(void (^)(id translatedObject))success
+               successCallback:(void (^)(Player *player))success
                failureCallback:(void (^)(NSError *error))failure;
 
 @end

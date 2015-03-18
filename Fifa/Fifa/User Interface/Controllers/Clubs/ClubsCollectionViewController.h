@@ -10,6 +10,6 @@
 
 @interface ClubsCollectionViewController : UICollectionViewController
 
-@property NSDictionary* clubList;
+@property (strong, nonatomic) NSArray* clubList;
 
 @end

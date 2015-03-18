@@ -10,13 +10,15 @@
 
 @implementation FIFAPlayerServiceAgent
 
--(void)requestPlayerWithResourceId:(NSString *)resourceId successCallback:(void (^)(id))success failureCallback:(void (^)(NSError *))failure{
+
+-(void)requestPlayerWithResourceId:(NSString *)resourceId successCallback:(void (^)(Player *))success failureCallback:(void (^)(NSError *))failure{
     NSString *urlParams = [[@"player/" stringByAppendingString:resourceId] lowercaseString];
     [self callServiceWithURL:urlParams httpMethod:AVTHTTPMethodGET parameters:nil translation:^id(id responseObject) {
         id json = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
-        return json;
-    } successCallback:^(id translatedObject) {
-        success(translatedObject);
+        Player *player = [[Player alloc] initWithJson:json];
+        return player;
+    } successCallback:^(Player *player) {
+        success(player);
     } failureCallback:^(NSError *error) {
         failure(error);
     }];

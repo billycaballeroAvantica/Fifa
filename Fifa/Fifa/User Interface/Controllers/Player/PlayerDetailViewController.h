@@ -7,6 +7,7 @@
 //
 
 #import "AVTBaseViewController.h"
+#import "Player.h"
 
 @interface PlayerDetailViewController : AVTBaseViewController
 
@@ -26,6 +27,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *playerSkillHeadingLabel;
 
 @property (weak, nonatomic) NSString * playerResourceId;
-@property (weak, nonatomic) NSDictionary * playerJson;
+@property (strong, nonatomic) Player * player;
 
 @end

@@ -8,8 +8,8 @@
 
 #import "AVTBaseTableViewController.h"
 
-@interface TopTenListTableViewController : AVTBaseTableViewController
+@interface PlayerListTableViewController : AVTBaseTableViewController
 
-@property (strong, atomic) NSArray *players;
+@property (strong, nonatomic) NSMutableArray *players;
 
 @end

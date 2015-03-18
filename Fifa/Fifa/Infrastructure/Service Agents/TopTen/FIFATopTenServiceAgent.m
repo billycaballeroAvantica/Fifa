@@ -13,15 +13,20 @@
 
 
 - (void)requestTopTenWithSkill:(NSString *)skill
-                    successCallback:(void (^)(id translatedObject))success
+                    successCallback:(void (^)(NSMutableArray *players))success
                     failureCallback:(void (^)(NSError *error))failure{
     NSString *urlParams = [[@"topten/" stringByAppendingString:skill] lowercaseString];
     [self callServiceWithURL: urlParams httpMethod:AVTHTTPMethodGET parameters:nil
                  translation:^id(id responseObject) {
         id json = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
-        return json;
-    } successCallback:^(id translatedObject) {
-        success(translatedObject);
+        NSMutableArray *players = [[NSMutableArray alloc] init];
+        for (id playerJson in json) {
+            Player *player = [[Player alloc] initWithJson:playerJson];
+            [players addObject:player];
+        }
+        return players;
+    } successCallback:^(NSMutableArray *players) {
+        success(players);
     } failureCallback:^(NSError *error) {
         failure(error);
     }];

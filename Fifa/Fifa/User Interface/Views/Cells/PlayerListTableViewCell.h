@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Player.h"
 
-@interface TopTenListTableViewCell : UITableViewCell
+@interface PlayerListTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *playerNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *playerProfileImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *playerClubImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *playerCountryImageView;
 
--(void) fillCell: (NSString *) playerName profileImage: (NSString *) profileUrl clubImage: (NSString *) clubUrl countryImage: (NSString *) countryUrl;
+-(void) fillCell: (Player *) player;
 
 @end

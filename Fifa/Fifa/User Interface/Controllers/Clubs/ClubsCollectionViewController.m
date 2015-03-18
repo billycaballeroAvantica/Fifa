@@ -8,20 +8,13 @@
 
 #import "ClubsCollectionViewController.h"
 #import "ClubsCollectionViewCell.h"
+#import "ClubRepository.h"
+#import "ClubsListViewController.h"
 
 @implementation ClubsCollectionViewController
 
 - (void) viewDidLoad{
-    self.clubList = @{  @"Arsenal" : @"arsenal",
-                        @"Aston Villa" : @"aston_villa",
-                        @"Blackburn Rovers" : @"blackburn_rovers",
-                        @"Chelsea" : @"chelsea",
-                        @"Everton": @"everton",
-                        @"Liverpool": @"liverpool",
-                        @"Manchester City": @"manchester_city",
-                        @"Manchester United": @"manchester_united",
-                        @"Bayern de Munich": @"bayern_munich",
-                        @"Juventus": @"juventus" };
+    self.clubList = [[ClubRepository sharedRepository] fillClub];
 }
 
 -(NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView
@@ -31,7 +24,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [[self.clubList allKeys] count];
+    return [self.clubList count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -40,14 +33,21 @@
                                     dequeueReusableCellWithReuseIdentifier:@"clubCollectionCellIdentifier"
                                     forIndexPath:indexPath];
     [cell setBackgroundRandom: indexPath.row];
-    [cell setSkillName: [self.clubList allKeys][indexPath.row] ];
-    [cell setSkillImage: [self.clubList allValues][indexPath.row] ];
+    [cell fillElements: self.clubList[indexPath.row]];
     return cell;
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return CGSizeMake(160, 150);
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier  isEqual:  @"clubPlayerListViewControllerIdentifier"]){
+        ClubsListViewController* clubListViewController = segue.destinationViewController;
+        NSIndexPath* indexPath =  self.collectionView.indexPathsForSelectedItems[0];
+        clubListViewController.club = self.clubList[indexPath.row];
+    }
 }
 
 
