@@ -21,6 +21,7 @@
     return _sharedRepository;
 }
 
+
 -(NSMutableArray *) synchronizePlayers: (id) json context:(NSManagedObjectContext *)ctx{
     NSMutableArray *players = [[NSMutableArray alloc] init];
     for (id playerJson in json) {
@@ -29,6 +30,7 @@
     [self saveManagedObjectContext: ctx];
     return players;
 }
+
 
 -(NSMutableArray *) playersBySkill: (NSString *) skill context: (NSManagedObjectContext *)ctx{
     NSArray * array = [[PlayerRepository sharedRepository] fetchEntitiesForClass:[Player class] withPredicate: nil  inManagedObjectContext: ctx];
@@ -39,10 +41,12 @@
     return [NSMutableArray arrayWithArray:sortedArray];
 }
 
+
 -(NSMutableArray *) playersByClubId: (NSString *) clubId context: (NSManagedObjectContext *)ctx{
     NSArray * clubsArray = [[PlayerRepository sharedRepository] fetchEntitiesForClass:[Player class] withPredicate: [NSPredicate predicateWithFormat: @" clubId = %@", clubId]  inManagedObjectContext: ctx];
     return [NSMutableArray arrayWithArray:clubsArray];
 }
+
 
 -(Player *) synchronizePlayer: (id) json context:(NSManagedObjectContext *)ctx{
     
@@ -60,7 +64,6 @@
     NSArray * arrayClubs = [[ClubRepository sharedRepository] fetchEntitiesForClass:[Club class] withPredicate: [NSPredicate predicateWithFormat: @" clubId = %@", player.clubId]  inManagedObjectContext: ctx];
     
     if (!arrayClubs || !arrayClubs.count){
-        
     }else{
         Club* club = arrayClubs[0];
         [club addPlayersObject:player];
