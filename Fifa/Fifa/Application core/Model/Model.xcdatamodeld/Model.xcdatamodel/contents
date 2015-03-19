@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Club" representedClassName="Club" syncable="YES">
+        <attribute name="clubId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="resourceId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="club" inverseEntity="Player" syncable="YES"/>
+    </entity>
+    <entity name="Player" representedClassName="Player" syncable="YES">
+        <attribute name="baseId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="clubId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commonName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateOfBirth" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="defending" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dribbling" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="edition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="foot" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="heading" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="leagueId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nationId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pace" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="passing" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="resourceId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shooting" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="club" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Club" inverseName="players" inverseEntity="Club" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Club" positionX="-47" positionY="59" width="128" height="103"/>
+        <element name="Player" positionX="279" positionY="-18" width="128" height="358"/>
+    </elements>
+</model>

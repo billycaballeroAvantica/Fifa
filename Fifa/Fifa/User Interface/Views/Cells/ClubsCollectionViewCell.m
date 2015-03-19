@@ -21,7 +21,7 @@
 }
 
 -(void)fillElements:(Club *)club{
-    self.clubImageView.image = [UIImage imageNamed: club.imageResource];
+    self.clubImageView.image = [UIImage imageNamed: club.resourceId];
     self.clubNameLabel.text = club.name;
 }
 

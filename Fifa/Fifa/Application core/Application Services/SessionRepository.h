@@ -7,8 +7,9 @@
 //
 
 #import "AVTBaseRepository.h"
+#import "FifaBaseRepository.h"
 
-@interface SessionRepository : AVTBaseRepository
+@interface SessionRepository : FifaBaseRepository
 
 - (void) setCurrentUser: (NSString *)user_name userPassword:(NSString *)password;
 - (BOOL) loginValidateFields: (NSString *)user_name userPassword:(NSString *)password;

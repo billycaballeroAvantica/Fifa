@@ -15,6 +15,12 @@
 		664BAF531AB9D98100FEB01D /* FIFAClubsServiceAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 664BAF4B1AB9D98100FEB01D /* FIFAClubsServiceAgent.m */; };
 		664BAF541AB9D98100FEB01D /* FIFAPlayerServiceAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 664BAF4E1AB9D98100FEB01D /* FIFAPlayerServiceAgent.m */; };
 		664BAF551AB9D98100FEB01D /* FIFATopTenServiceAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 664BAF511AB9D98100FEB01D /* FIFATopTenServiceAgent.m */; };
+		664BAF5C1AB9DC0900FEB01D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 664BAF5A1AB9DC0900FEB01D /* Model.xcdatamodeld */; };
+		664BAF5F1AB9E70800FEB01D /* Club.m in Sources */ = {isa = PBXBuildFile; fileRef = 664BAF5E1AB9E70800FEB01D /* Club.m */; };
+		664BAF621AB9E75700FEB01D /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 664BAF611AB9E75700FEB01D /* Player.m */; };
+		664BAF681ABA19D300FEB01D /* FifaBaseRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 664BAF671ABA19D300FEB01D /* FifaBaseRepository.m */; };
+		664BAF6B1ABA28EC00FEB01D /* PlayerRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 664BAF6A1ABA28EC00FEB01D /* PlayerRepository.m */; };
+		664C44141ABB18B4000E2F0E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664C44131ABB18B4000E2F0E /* CoreData.framework */; };
 		665C15161AB7802E0080F810 /* SessionRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 665C14D21AB7802D0080F810 /* SessionRepository.m */; };
 		665C15171AB7802E0080F810 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 665C14D61AB7802D0080F810 /* User.m */; };
 		665C15181AB7802E0080F810 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 665C14DB1AB7802E0080F810 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -42,8 +48,6 @@
 		665C15401AB78A160080F810 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665C153F1AB78A160080F810 /* ImageIO.framework */; };
 		66676F231AB88B950064EA7D /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66676F221AB88B950064EA7D /* PlayerDetailViewController.m */; };
 		66676F2A1AB8B4F60064EA7D /* ImageDownloadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 66676F291AB8B4F60064EA7D /* ImageDownloadHelper.m */; };
-		66676F2D1AB8CB440064EA7D /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 66676F2C1AB8CB440064EA7D /* Player.m */; };
-		66676F301AB8E7E50064EA7D /* Club.m in Sources */ = {isa = PBXBuildFile; fileRef = 66676F2F1AB8E7E50064EA7D /* Club.m */; };
 		CE6086B31977171A0021B562 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6086B21977171A0021B562 /* Foundation.framework */; };
 		CE6086B51977171A0021B562 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6086B41977171A0021B562 /* CoreGraphics.framework */; };
 		CE6086B71977171A0021B562 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6086B61977171A0021B562 /* UIKit.framework */; };
@@ -77,6 +81,16 @@
 		664BAF4E1AB9D98100FEB01D /* FIFAPlayerServiceAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIFAPlayerServiceAgent.m; sourceTree = "<group>"; };
 		664BAF501AB9D98100FEB01D /* FIFATopTenServiceAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIFATopTenServiceAgent.h; sourceTree = "<group>"; };
 		664BAF511AB9D98100FEB01D /* FIFATopTenServiceAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIFATopTenServiceAgent.m; sourceTree = "<group>"; };
+		664BAF5B1AB9DC0900FEB01D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		664BAF5D1AB9E70700FEB01D /* Club.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Club.h; sourceTree = "<group>"; };
+		664BAF5E1AB9E70800FEB01D /* Club.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Club.m; sourceTree = "<group>"; };
+		664BAF601AB9E75700FEB01D /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		664BAF611AB9E75700FEB01D /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		664BAF661ABA19D300FEB01D /* FifaBaseRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifaBaseRepository.h; sourceTree = "<group>"; };
+		664BAF671ABA19D300FEB01D /* FifaBaseRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifaBaseRepository.m; sourceTree = "<group>"; };
+		664BAF691ABA28EC00FEB01D /* PlayerRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerRepository.h; sourceTree = "<group>"; };
+		664BAF6A1ABA28EC00FEB01D /* PlayerRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerRepository.m; sourceTree = "<group>"; };
+		664C44131ABB18B4000E2F0E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		665C14D11AB7802D0080F810 /* SessionRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionRepository.h; sourceTree = "<group>"; };
 		665C14D21AB7802D0080F810 /* SessionRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionRepository.m; sourceTree = "<group>"; };
 		665C14D51AB7802D0080F810 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -121,10 +135,6 @@
 		66676F221AB88B950064EA7D /* PlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
 		66676F281AB8B4F60064EA7D /* ImageDownloadHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadHelper.h; sourceTree = "<group>"; };
 		66676F291AB8B4F60064EA7D /* ImageDownloadHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadHelper.m; sourceTree = "<group>"; };
-		66676F2B1AB8CB440064EA7D /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		66676F2C1AB8CB440064EA7D /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
-		66676F2E1AB8E7E50064EA7D /* Club.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Club.h; sourceTree = "<group>"; };
-		66676F2F1AB8E7E50064EA7D /* Club.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Club.m; sourceTree = "<group>"; };
 		CE6086AF1977171A0021B562 /* Fifa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fifa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6086B21977171A0021B562 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE6086B41977171A0021B562 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -137,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				664C44141ABB18B4000E2F0E /* CoreData.framework in Frameworks */,
 				665C15401AB78A160080F810 /* ImageIO.framework in Frameworks */,
 				665C153A1AB7860D0080F810 /* libCommon.a in Frameworks */,
 				66319D221AB23E0F004F09F9 /* Security.framework in Frameworks */,
@@ -195,6 +206,14 @@
 			path = TopTen;
 			sourceTree = "<group>";
 		};
+		664BAF591AB9DC0900FEB01D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				664BAF5A1AB9DC0900FEB01D /* Model.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		665C14CE1AB7802D0080F810 /* Fifa */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +230,7 @@
 			children = (
 				665C14D01AB7802D0080F810 /* Application Services */,
 				665C14D31AB7802D0080F810 /* Domain model */,
+				664BAF591AB9DC0900FEB01D /* Model */,
 			);
 			path = "Application core";
 			sourceTree = "<group>";
@@ -222,6 +242,10 @@
 				665C14D21AB7802D0080F810 /* SessionRepository.m */,
 				664BAF431AB9C84000FEB01D /* ClubRepository.h */,
 				664BAF441AB9C84000FEB01D /* ClubRepository.m */,
+				664BAF661ABA19D300FEB01D /* FifaBaseRepository.h */,
+				664BAF671ABA19D300FEB01D /* FifaBaseRepository.m */,
+				664BAF691ABA28EC00FEB01D /* PlayerRepository.h */,
+				664BAF6A1ABA28EC00FEB01D /* PlayerRepository.m */,
 			);
 			path = "Application Services";
 			sourceTree = "<group>";
@@ -232,10 +256,10 @@
 				665C14D41AB7802D0080F810 /* Categories */,
 				665C14D51AB7802D0080F810 /* User.h */,
 				665C14D61AB7802D0080F810 /* User.m */,
-				66676F2B1AB8CB440064EA7D /* Player.h */,
-				66676F2C1AB8CB440064EA7D /* Player.m */,
-				66676F2E1AB8E7E50064EA7D /* Club.h */,
-				66676F2F1AB8E7E50064EA7D /* Club.m */,
+				664BAF5D1AB9E70700FEB01D /* Club.h */,
+				664BAF5E1AB9E70800FEB01D /* Club.m */,
+				664BAF601AB9E75700FEB01D /* Player.h */,
+				664BAF611AB9E75700FEB01D /* Player.m */,
 			);
 			path = "Domain model";
 			sourceTree = "<group>";
@@ -511,6 +535,7 @@
 		CE6086B11977171A0021B562 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				664C44131ABB18B4000E2F0E /* CoreData.framework */,
 				665C153F1AB78A160080F810 /* ImageIO.framework */,
 				665C15391AB7860D0080F810 /* libCommon.a */,
 				66319D211AB23E0F004F09F9 /* Security.framework */,
@@ -623,7 +648,6 @@
 			files = (
 				665C15231AB7802E0080F810 /* TopTenViewController.m in Sources */,
 				665C15171AB7802E0080F810 /* User.m in Sources */,
-				66676F301AB8E7E50064EA7D /* Club.m in Sources */,
 				665C151C1AB7802E0080F810 /* AppDelegate.m in Sources */,
 				665C15161AB7802E0080F810 /* SessionRepository.m in Sources */,
 				664BAF451AB9C84000FEB01D /* ClubRepository.m in Sources */,
@@ -632,19 +656,23 @@
 				665C15251AB7802E0080F810 /* TopTenListViewController.m in Sources */,
 				665C15291AB7802E0080F810 /* ClubsCollectionViewCell.m in Sources */,
 				664BAF551AB9D98100FEB01D /* FIFATopTenServiceAgent.m in Sources */,
+				664BAF5C1AB9DC0900FEB01D /* Model.xcdatamodeld in Sources */,
 				664BAF531AB9D98100FEB01D /* FIFAClubsServiceAgent.m in Sources */,
 				665C152A1AB7802E0080F810 /* SkillPlayersTableViewCell.m in Sources */,
+				664BAF5F1AB9E70800FEB01D /* Club.m in Sources */,
 				664BAF3F1AB9C34B00FEB01D /* ClubsListViewController.m in Sources */,
 				665C15211AB7802E0080F810 /* LoginViewController.m in Sources */,
+				664BAF621AB9E75700FEB01D /* Player.m in Sources */,
 				665C151F1AB7802E0080F810 /* main.m in Sources */,
 				665C15201AB7802E0080F810 /* ClubsCollectionViewController.m in Sources */,
 				665C15221AB7802E0080F810 /* ClubsViewController.m in Sources */,
 				66676F2A1AB8B4F60064EA7D /* ImageDownloadHelper.m in Sources */,
 				664BAF521AB9D98100FEB01D /* FIFABaseServiceAgent.m in Sources */,
 				665C152B1AB7802E0080F810 /* PlayerListTableViewCell.m in Sources */,
+				664BAF681ABA19D300FEB01D /* FifaBaseRepository.m in Sources */,
 				665C15261AB7802E0080F810 /* TopTenSkillTableViewController.m in Sources */,
 				66676F231AB88B950064EA7D /* PlayerDetailViewController.m in Sources */,
-				66676F2D1AB8CB440064EA7D /* Player.m in Sources */,
+				664BAF6B1ABA28EC00FEB01D /* PlayerRepository.m in Sources */,
 				665C15181AB7802E0080F810 /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -892,6 +920,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		664BAF5A1AB9DC0900FEB01D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				664BAF5B1AB9DC0900FEB01D /* Model.xcdatamodel */,
+			);
+			currentVersion = 664BAF5B1AB9DC0900FEB01D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE6086A71977171A0021B562 /* Project object */;
 }

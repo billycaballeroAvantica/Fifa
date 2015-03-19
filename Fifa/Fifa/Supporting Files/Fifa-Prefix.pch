@@ -15,5 +15,6 @@
     #import <Foundation/Foundation.h>
     #import "MRProgress.h"
     #import "AVTLocalizationMacros.h"
-
+    #import <CoreData/CoreData.h>
+    #import "AppDelegate.h"
 #endif

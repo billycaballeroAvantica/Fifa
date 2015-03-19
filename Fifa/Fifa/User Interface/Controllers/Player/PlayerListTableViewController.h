@@ -10,6 +10,6 @@
 
 @interface PlayerListTableViewController : AVTBaseTableViewController
 
-@property (strong, nonatomic) NSMutableArray *players;
+@property (strong, nonatomic) NSArray *players;
 
 @end

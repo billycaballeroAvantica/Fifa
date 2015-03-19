@@ -14,6 +14,7 @@ NSString * const kFIFABaseUrl = @"http://tools.fifaguide.com/api/";
 
 -(instancetype)initWithBaseUrl{
     self = [super initWithBaseURL: [NSURL URLWithString: kFIFABaseUrl]];
+    self.responseSerializer =  [AFHTTPResponseSerializer serializer];
     return self;
 }
 

@@ -11,7 +11,8 @@
 
 @implementation ClubRepository
 
--(NSMutableArray *)fillClub{
+-(NSMutableArray *)clubs{
+    self.managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     NSMutableArray *clubs = [[NSMutableArray alloc] init];
     NSArray *json = @[ @{@"club_id": @"1", @"name": @"Arsenal", @"image_resource": @"arsenal"} ,
                        @{@"club_id": @"2", @"name": @"Aston Villa", @"image_resource": @"aston_villa"},
@@ -23,10 +24,30 @@
                        @{@"club_id": @"11", @"name": @"Manchester United", @"image_resource": @"manchester_united"},
                        @{@"club_id": @"21", @"name": @"Bayern de Múnich", @"image_resource": @"bayern_munich"},
                        @{@"club_id": @"45", @"name": @"Juventus", @"image_resource": @"juventus"}];
-    for(id clubJson in json){
-        [clubs addObject:[[Club alloc] initWithJson:clubJson]];
-    }
+    clubs = [self synchronizeClubs:json context:self.managedObjectContext];
+    [self saveManagedObjectContext: self.managedObjectContext];
     return clubs;
+}
+-(NSMutableArray *) synchronizeClubs: (id) json context: (NSManagedObjectContext *)ctx{
+    NSMutableArray *clubs = [[NSMutableArray alloc] init];
+    for (id clubJson in json) {
+        [clubs addObject: [self synchronizeClub:clubJson context:ctx] ];
+    }
+    [self saveManagedObjectContext: ctx];
+    return clubs;
+}
+
+-(Club *) synchronizeClub: (id) json context: (NSManagedObjectContext *)ctx{
+    Club* club;
+    NSArray * array = [[ClubRepository sharedRepository] fetchEntitiesForClass:[Club class] withPredicate: [NSPredicate predicateWithFormat: @" clubId = %@", json[@"club_id"]]  inManagedObjectContext: ctx];
+    
+    if (!array || !array.count){
+        club = [self insertManagedObjectOfClass:[Club class] inManagedObjectContext:ctx];
+    }else{
+        club = array[0];
+    }
+    club = [club initWithJson:json];
+    return club;
 }
 
 + (instancetype)sharedRepository

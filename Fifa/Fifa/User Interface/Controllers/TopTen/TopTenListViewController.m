@@ -16,6 +16,8 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     [[MRProgressOverlayView showOverlayAddedTo:self.view title: @"Loading" mode: MRProgressOverlayViewModeIndeterminate animated:TRUE] setTintColor: [UIColor blackColor]];
     [[FIFATopTenServiceAgent sharedAgent] requestTopTenWithSkill: self.playerSkill successCallback:^(NSMutableArray *players) {
+        NSLog(@"PLAYERS ==> %@", players);
+        
         self.tableViewController.players = players;
         [self.tableViewController.tableView reloadData];
         [MRProgressOverlayView dismissOverlayForView:self.view animated:TRUE];

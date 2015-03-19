@@ -14,7 +14,7 @@
 @implementation ClubsCollectionViewController
 
 - (void) viewDidLoad{
-    self.clubList = [[ClubRepository sharedRepository] fillClub];
+    self.clubList = [[ClubRepository sharedRepository] clubs];
 }
 
 -(NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView

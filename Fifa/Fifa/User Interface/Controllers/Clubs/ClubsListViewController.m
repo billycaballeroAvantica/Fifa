@@ -8,11 +8,11 @@
 
 #import "ClubsListViewController.h"
 #import "FIFAClubsServiceAgent.h"
+#import "PlayerRepository.h"
 
 @implementation ClubsListViewController
 
 -(void)viewDidLoad{
-    //self.automaticallyAdjustsScrollViewInsets = NO;
     [[MRProgressOverlayView showOverlayAddedTo:self.view title: @"Loading" mode: MRProgressOverlayViewModeIndeterminate animated:TRUE] setTintColor: [UIColor blackColor]];
     [[FIFAClubsServiceAgent sharedAgent] requestPlayersWithClubId: self.club.clubId successCallback:^(NSMutableArray *players) {
         self.tableViewController.players = players;

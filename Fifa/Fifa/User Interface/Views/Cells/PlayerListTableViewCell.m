@@ -13,9 +13,9 @@
 
 -(void) fillCell:(Player *)player{
     self.playerNameLabel.text = [NSString stringWithFormat: @"%@", player.firstName];
-    [ImageDownloadHelper fillProfileImage:self.playerProfileImageView url: player.baseId];
-    [ImageDownloadHelper fillClubImage:self.playerClubImageView url: player.clubId];
-    [ImageDownloadHelper fillCountryImage:self.playerCountryImageView url: player.nationId];
+    [ImageDownloadHelper fillProfileImage:self.playerProfileImageView url: [NSString stringWithFormat: @"%@", player.baseId] ];
+    [ImageDownloadHelper fillClubImage:self.playerClubImageView url: [NSString stringWithFormat: @"%@", player.clubId] ];
+    [ImageDownloadHelper fillCountryImage:self.playerCountryImageView url: [NSString stringWithFormat: @"%@", player.nationId] ];
 }
 
 @end

@@ -2,35 +2,40 @@
 //  Player.h
 //  Fifa
 //
-//  Created by Billy.Caballero on 3/17/15.
+//  Created by Billy.Caballero on 3/18/15.
 //  Copyright (c) 2015 Avantica Technologies. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Player : NSObject
+@class Club;
 
-@property (strong, nonatomic) NSString * resourceId;
-@property (strong, nonatomic) NSString * baseId;
-@property (strong, nonatomic) NSString * firstName;
-@property (strong, nonatomic) NSString * lastName;
-@property (strong, nonatomic) NSString * commonName;
-@property (strong, nonatomic) NSString * height;
-@property (strong, nonatomic) NSString * dateOfBirth;
-@property (strong, nonatomic) NSString * foot;
-@property (strong, nonatomic) NSString * clubId;
-@property (strong, nonatomic) NSString * leagueId;
-@property (strong, nonatomic) NSString * nationId;
-@property (strong, nonatomic) NSString * rating;
-@property (strong, nonatomic) NSString * type;
-@property (strong, nonatomic) NSString * edition;
-@property (strong, nonatomic) NSString * pace;
-@property (strong, nonatomic) NSString * shooting;
-@property (strong, nonatomic) NSString * passing;
-@property (strong, nonatomic) NSString * dribbling;
-@property (strong, nonatomic) NSString * defending;
-@property (strong, nonatomic) NSString * heading;
+@interface Player : NSManagedObject
+
+@property (nonatomic, retain) NSString * resourceId;
+@property (nonatomic, retain) NSString * baseId;
+@property (nonatomic, retain) NSString * firstName;
+@property (nonatomic, retain) NSString * lastName;
+@property (nonatomic, retain) NSString * commonName;
+@property (nonatomic, retain) NSString * height;
+@property (nonatomic, retain) NSString * dateOfBirth;
+@property (nonatomic, retain) NSString * foot;
+@property (nonatomic, retain) NSString * clubId;
+@property (nonatomic, retain) NSString * leagueId;
+@property (nonatomic, retain) NSString * nationId;
+@property (nonatomic, retain) NSString * rating;
+@property (nonatomic, retain) NSString * type;
+@property (nonatomic, retain) NSString * edition;
+@property (nonatomic, retain) NSString * pace;
+@property (nonatomic, retain) NSString * shooting;
+@property (nonatomic, retain) NSString * passing;
+@property (nonatomic, retain) NSString * dribbling;
+@property (nonatomic, retain) NSString * defending;
+@property (nonatomic, retain) NSString * heading;
+@property (nonatomic, retain) Club *club;
 
 -(id)initWithJson: (id) json;
+
 
 @end

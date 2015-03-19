@@ -14,10 +14,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextfield;
 - (IBAction)goSignIn:(id)sender;
 
-@property UITapGestureRecognizer * tapRecognizer;
-@property UITextField *activeTextField;
+@property (strong, nonatomic) UITapGestureRecognizer * tapRecognizer;
+@property (weak, nonatomic) UITextField *activeTextField;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *loginBottomContraint;
-@property CGSize keyboardSize;
+@property (nonatomic) CGSize keyboardSize;
 @property (weak, nonatomic) IBOutlet UIButton *btnLogin;
 
 @end

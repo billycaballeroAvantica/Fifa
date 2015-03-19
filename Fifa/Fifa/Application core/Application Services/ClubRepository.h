@@ -7,11 +7,15 @@
 //
 
 #import "AVTBaseRepository.h"
+#import "FifaBaseRepository.h"
+#import "Club.h"
 
-@interface ClubRepository : AVTBaseRepository
+@interface ClubRepository : FifaBaseRepository
 
--(NSMutableArray *) fillClub;
-
+@property (nonatomic, strong) NSManagedObjectContext  *managedObjectContext;
+-(NSMutableArray *) clubs;
+-(NSMutableArray *) synchronizeClubs: (id) json context: (NSManagedObjectContext *)ctx;
+-(Club *) synchronizeClub: (id) json context: (NSManagedObjectContext *)ctx;
 + (instancetype)sharedRepository;
 
 @end
