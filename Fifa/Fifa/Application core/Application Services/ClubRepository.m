@@ -28,6 +28,7 @@
     [self saveManagedObjectContext: self.managedObjectContext];
     return clubs;
 }
+
 -(NSMutableArray *) synchronizeClubs: (id) json context: (NSManagedObjectContext *)ctx{
     NSMutableArray *clubs = [[NSMutableArray alloc] init];
     for (id clubJson in json) {

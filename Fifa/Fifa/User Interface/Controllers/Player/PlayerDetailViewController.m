@@ -14,16 +14,18 @@
 
 -(void)viewDidLoad{
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self requestPlayerInfo];
+    [self fillElements];
+    [self requestToUpdatePlayerInfo];
 }
 
--(void)requestPlayerInfo{
+-(void)requestToUpdatePlayerInfo{
     [[MRProgressOverlayView showOverlayAddedTo:self.view title: @"Loading" mode: MRProgressOverlayViewModeIndeterminate animated:TRUE] setTintColor: [UIColor blackColor]];
-    [[FIFAPlayerServiceAgent sharedAgent] requestPlayerWithResourceId: self.playerResourceId successCallback:^(Player *player) {
+    [[FIFAPlayerServiceAgent sharedAgent] requestPlayerWithResourceId: self.player.resourceId successCallback:^(Player *player) {
         self.player = player;
         [self fillElements];
         [MRProgressOverlayView dismissOverlayForView:self.view animated:TRUE];
     } failureCallback:^(NSError *error) {
+        [FIFAErrors alertViewInternetConnectionWithMessage: error.userInfo[NSLocalizedDescriptionKey]];
         [MRProgressOverlayView dismissOverlayForView:self.view animated:TRUE];
     }];
 }

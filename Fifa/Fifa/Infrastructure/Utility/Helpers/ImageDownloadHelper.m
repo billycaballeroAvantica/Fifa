@@ -8,6 +8,7 @@
 
 #import "ImageDownloadHelper.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+AFNetworking.h"
 
 static NSString * const kFIFAPlayerResorces = @"http://cdn.content.easports.com/fifa/fltOnlineAssets/C74DDF38-0B11-49b0-B199-2E2A11D1CC13/2014/fut/items/images/";
 
@@ -35,9 +36,16 @@ static NSString * const kFIFAPlayerCountryBaseUrl = @"cardflagssmall/web/";
 }
 
 +(void)downloadImage: (UIImageView *)imageView url: (NSURL *) url{
-    [[SDWebImageDownloader sharedDownloader]downloadImageWithURL:url options:0 progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+    NSURLRequest *imageRequest = [NSURLRequest requestWithURL:url
+                                                  cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                              timeoutInterval:60];
+    [imageView setImageWithURLRequest:imageRequest
+                     placeholderImage:[UIImage imageNamed:@"1"]
+                              success:nil
+                              failure:nil];
+    /*[[SDWebImageDownloader sharedDownloader]downloadImageWithURL:url options:0 progress:nil completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
         imageView.image = image;
-    }];
+    }];*/
 }
 
 

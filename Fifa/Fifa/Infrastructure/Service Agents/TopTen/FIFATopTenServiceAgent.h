@@ -15,6 +15,6 @@
 
 - (void)requestTopTenWithSkill: (NSString *)skill
        successCallback:(void (^)(NSMutableArray *players))success
-       failureCallback:(void (^)(NSError *error))failure;
+       failureCallback:(void (^)(NSError *error, NSMutableArray *players))failure;
 
 @end

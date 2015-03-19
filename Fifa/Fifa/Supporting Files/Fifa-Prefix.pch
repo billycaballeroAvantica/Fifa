@@ -17,4 +17,5 @@
     #import "AVTLocalizationMacros.h"
     #import <CoreData/CoreData.h>
     #import "AppDelegate.h"
+    #import "FIFAErrors.h"
 #endif

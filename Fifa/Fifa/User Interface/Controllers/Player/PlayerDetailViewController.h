@@ -26,7 +26,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *playerSkillDefendingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *playerSkillHeadingLabel;
 
-@property (weak, nonatomic) NSString * playerResourceId;
 @property (strong, nonatomic) Player * player;
 
 @end

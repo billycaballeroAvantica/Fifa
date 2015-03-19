@@ -30,6 +30,20 @@
     return players;
 }
 
+-(NSMutableArray *) playersBySkill: (NSString *) skill context: (NSManagedObjectContext *)ctx{
+    NSArray * array = [[PlayerRepository sharedRepository] fetchEntitiesForClass:[Player class] withPredicate: nil  inManagedObjectContext: ctx];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey: skill ascending: NO];
+    NSArray *sortedArray = [array sortedArrayUsingDescriptors: [NSArray arrayWithObject:sortDescriptor]];
+    sortedArray = sortedArray.count > 10 ? [sortedArray subarrayWithRange:NSMakeRange(0, 10)] : sortedArray;
+    return [NSMutableArray arrayWithArray:sortedArray];
+}
+
+-(NSMutableArray *) playersByClubId: (NSString *) clubId context: (NSManagedObjectContext *)ctx{
+    NSArray * clubsArray = [[PlayerRepository sharedRepository] fetchEntitiesForClass:[Player class] withPredicate: [NSPredicate predicateWithFormat: @" clubId = %@", clubId]  inManagedObjectContext: ctx];
+    return [NSMutableArray arrayWithArray:clubsArray];
+}
+
 -(Player *) synchronizePlayer: (id) json context:(NSManagedObjectContext *)ctx{
     
     Player* player;
