@@ -11,6 +11,17 @@
 
 @implementation ClubRepository
 
++ (instancetype)sharedRepository
+{
+    static id _sharedRepository = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedRepository = [[self class] new];
+    });
+    return _sharedRepository;
+}
+
+
 -(NSMutableArray *)clubs{
     self.managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     NSMutableArray *clubs = [[NSMutableArray alloc] init];
@@ -28,6 +39,8 @@
     [self saveManagedObjectContext: self.managedObjectContext];
     return clubs;
 }
+
+
 -(NSMutableArray *) synchronizeClubs: (id) json context: (NSManagedObjectContext *)ctx{
     NSMutableArray *clubs = [[NSMutableArray alloc] init];
     for (id clubJson in json) {
@@ -36,6 +49,7 @@
     [self saveManagedObjectContext: ctx];
     return clubs;
 }
+
 
 -(Club *) synchronizeClub: (id) json context: (NSManagedObjectContext *)ctx{
     Club* club;
@@ -50,14 +64,6 @@
     return club;
 }
 
-+ (instancetype)sharedRepository
-{
-    static id _sharedRepository = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _sharedRepository = [[self class] new];
-    });
-    return _sharedRepository;
-}
+
 
 @end

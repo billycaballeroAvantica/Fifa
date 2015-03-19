@@ -15,7 +15,7 @@
 
 - (void)requestTopTenWithSkill:(NSString *)skill
                     successCallback:(void (^)(NSMutableArray *players))success
-                    failureCallback:(void (^)(NSError *error))failure{
+                    failureCallback:(void (^)(NSError *error, NSMutableArray *players))failure{
     
     NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
@@ -28,7 +28,9 @@
     } successCallback:^(NSMutableArray *players) {
         success(players);
     } failureCallback:^(NSError *error) {
-        failure(error);
+        [FIFAErrors alertViewInternetConnectionWithMessage: error.userInfo[NSLocalizedDescriptionKey]];
+        NSMutableArray *players = [[PlayerRepository sharedRepository] playersBySkill:skill context: managedObjectContext];
+        failure(error, players);
     }];
 }
 

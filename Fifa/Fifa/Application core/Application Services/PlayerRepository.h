@@ -13,6 +13,8 @@
 
 +(instancetype)sharedRepository;
 -(NSMutableArray *) synchronizePlayers: (id) json context: (NSManagedObjectContext *)ctx;
+-(NSMutableArray *) playersBySkill: (NSString *) skill context: (NSManagedObjectContext *)ctx;
+-(NSMutableArray *) playersByClubId: (NSString *) clubId context: (NSManagedObjectContext *)ctx;
 -(Player *) synchronizePlayer: (id) json context: (NSManagedObjectContext *)ctx;
 
 @end

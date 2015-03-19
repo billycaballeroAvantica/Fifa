@@ -47,7 +47,7 @@
     if ([segue.identifier  isEqual: @"playerDetailViewControllerIdentifier"]) {
         PlayerDetailViewController *playerDetailViewController = segue.destinationViewController;
         Player *player = self.players[self.tableView.indexPathForSelectedRow.row];
-        playerDetailViewController.playerResourceId = player.resourceId;
+        playerDetailViewController.player = player;
     }
 }
 

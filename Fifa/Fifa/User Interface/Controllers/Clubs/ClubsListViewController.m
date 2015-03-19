@@ -18,8 +18,10 @@
         self.tableViewController.players = players;
         [self.tableViewController.tableView reloadData];
         [MRProgressOverlayView dismissOverlayForView:self.view animated:TRUE];
-    } failureCallback:^(NSError *error) {
-        NSLog(@"error");
+    } failureCallback:^(NSError *error, NSMutableArray *players) {
+        NSLog(@"error %@", error);
+        self.tableViewController.players = players;
+        [self.tableViewController.tableView reloadData];
         [MRProgressOverlayView dismissOverlayForView:self.view animated:TRUE];
     }];
 }

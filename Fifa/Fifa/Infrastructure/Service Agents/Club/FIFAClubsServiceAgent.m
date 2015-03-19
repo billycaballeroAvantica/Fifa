@@ -13,7 +13,7 @@
 
 - (void)requestPlayersWithClubId:(NSString *)clubId
                successCallback:(void (^)(NSMutableArray *players))success
-               failureCallback:(void (^)(NSError *error))failure{
+               failureCallback:(void (^)(NSError *error, NSMutableArray *players))failure{
     
     NSManagedObjectContext* managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
@@ -26,7 +26,9 @@
                  } successCallback:^(NSMutableArray *players) {
                      success(players);
                  } failureCallback:^(NSError *error) {
-                     failure(error);
+                     [FIFAErrors alertViewInternetConnectionWithMessage: error.userInfo[NSLocalizedDescriptionKey]];
+                     NSMutableArray *players = [[PlayerRepository sharedRepository] playersByClubId:clubId context:managedObjectContext];
+                     failure(error, players);
                  }];
 }
 

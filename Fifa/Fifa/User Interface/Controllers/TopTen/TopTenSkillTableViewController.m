@@ -14,7 +14,7 @@
 
 - (void) viewDidLoad{
     self.skillPlayers = @[@"Pace", @"Dribbling", @"Shooting",
-                             @"Defending", @"Heading", @"Passing", @"Height", @"Rating", @"Sales"];
+                             @"Defending", @"Heading", @"Passing", @"Height", @"Rating"];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
