@@ -11,6 +11,10 @@
 
 @implementation PlayerRepository
 
+#pragma mark -
+#pragma mark Initialization
+#pragma mark -
+
 + (instancetype)sharedRepository
 {
     static id _sharedRepository = nil;
@@ -21,6 +25,11 @@
     return _sharedRepository;
 }
 
+#pragma mark -
+#pragma mark Public Methods
+#pragma mark -
+
+#pragma mark - update players
 
 -(NSMutableArray *) synchronizePlayers: (id) json context:(NSManagedObjectContext *)ctx{
     NSMutableArray *players = [[NSMutableArray alloc] init];
@@ -30,23 +39,6 @@
     [self saveManagedObjectContext: ctx];
     return players;
 }
-
-
--(NSMutableArray *) playersBySkill: (NSString *) skill context: (NSManagedObjectContext *)ctx{
-    NSArray * array = [[PlayerRepository sharedRepository] fetchEntitiesForClass:[Player class] withPredicate: nil  inManagedObjectContext: ctx];
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
-                                        initWithKey: skill ascending: NO];
-    NSArray *sortedArray = [array sortedArrayUsingDescriptors: [NSArray arrayWithObject:sortDescriptor]];
-    sortedArray = sortedArray.count > 10 ? [sortedArray subarrayWithRange:NSMakeRange(0, 10)] : sortedArray;
-    return [NSMutableArray arrayWithArray:sortedArray];
-}
-
-
--(NSMutableArray *) playersByClubId: (NSString *) clubId context: (NSManagedObjectContext *)ctx{
-    NSArray * clubsArray = [[PlayerRepository sharedRepository] fetchEntitiesForClass:[Player class] withPredicate: [NSPredicate predicateWithFormat: @" clubId = %@", clubId]  inManagedObjectContext: ctx];
-    return [NSMutableArray arrayWithArray:clubsArray];
-}
-
 
 -(Player *) synchronizePlayer: (id) json context:(NSManagedObjectContext *)ctx{
     
@@ -71,6 +63,22 @@
     return player;
 }
 
+#pragma mark - get players by skill
 
+-(NSMutableArray *) playersBySkill: (NSString *) skill context: (NSManagedObjectContext *)ctx{
+    NSArray * array = [[PlayerRepository sharedRepository] fetchEntitiesForClass:[Player class] withPredicate: nil  inManagedObjectContext: ctx];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey: skill ascending: NO];
+    NSArray *sortedArray = [array sortedArrayUsingDescriptors: [NSArray arrayWithObject:sortDescriptor]];
+    sortedArray = sortedArray.count > 10 ? [sortedArray subarrayWithRange:NSMakeRange(0, 10)] : sortedArray;
+    return [NSMutableArray arrayWithArray:sortedArray];
+}
+
+#pragma mark - get players by club id
+
+-(NSMutableArray *) playersByClubId: (NSString *) clubId context: (NSManagedObjectContext *)ctx{
+    NSArray * clubsArray = [[PlayerRepository sharedRepository] fetchEntitiesForClass:[Player class] withPredicate: [NSPredicate predicateWithFormat: @" clubId = %@", clubId]  inManagedObjectContext: ctx];
+    return [NSMutableArray arrayWithArray:clubsArray];
+}
 
 @end

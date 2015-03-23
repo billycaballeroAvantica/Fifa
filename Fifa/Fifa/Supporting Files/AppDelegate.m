@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "PlayerRepository.h"
 #import "Player.h"
+#import "FIFABaseAppearanceManager.h"
 
 @implementation AppDelegate
 
@@ -24,7 +25,7 @@
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
     }
-    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[FIFABaseAppearanceManager sharedManager] setAppearance];
     return YES;
 }
 

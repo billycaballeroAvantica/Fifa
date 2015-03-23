@@ -11,6 +11,10 @@
 
 @implementation ClubRepository
 
+#pragma mark -
+#pragma mark Initialization
+#pragma mark -
+
 + (instancetype)sharedRepository
 {
     static id _sharedRepository = nil;
@@ -21,6 +25,11 @@
     return _sharedRepository;
 }
 
+#pragma mark -
+#pragma mark Public Methods
+#pragma mark -
+
+#pragma mark - fill clubs
 
 -(NSMutableArray *)clubs{
     self.managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
@@ -40,6 +49,7 @@
     return clubs;
 }
 
+#pragma mark - update clubs
 
 -(NSMutableArray *) synchronizeClubs: (id) json context: (NSManagedObjectContext *)ctx{
     NSMutableArray *clubs = [[NSMutableArray alloc] init];
@@ -50,6 +60,7 @@
     return clubs;
 }
 
+#pragma mark - update club
 
 -(Club *) synchronizeClub: (id) json context: (NSManagedObjectContext *)ctx{
     Club* club;

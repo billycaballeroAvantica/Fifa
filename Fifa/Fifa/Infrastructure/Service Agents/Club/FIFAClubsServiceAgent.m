@@ -11,6 +11,27 @@
 
 @implementation FIFAClubsServiceAgent
 
+#pragma mark -
+#pragma mark Initialization
+#pragma mark -
+
++ (instancetype)sharedAgent
+{
+    static FIFAClubsServiceAgent *_sharedAgent = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedAgent = [[FIFAClubsServiceAgent alloc] initWithBaseUrl];
+    });
+    
+    return _sharedAgent;
+}
+
+#pragma mark -
+#pragma mark Public Methods
+#pragma mark -
+
+#pragma mark - request to get players by club
+
 - (void)requestPlayersWithClubId:(NSString *)clubId
                successCallback:(void (^)(NSMutableArray *players))success
                failureCallback:(void (^)(NSError *error, NSMutableArray *players))failure{
@@ -30,18 +51,6 @@
                      NSMutableArray *players = [[PlayerRepository sharedRepository] playersByClubId:clubId context:managedObjectContext];
                      failure(error, players);
                  }];
-}
-
-
-+ (instancetype)sharedAgent
-{
-    static FIFAClubsServiceAgent *_sharedAgent = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _sharedAgent = [[FIFAClubsServiceAgent alloc] initWithBaseUrl];
-    });
-    
-    return _sharedAgent;
 }
 
 @end

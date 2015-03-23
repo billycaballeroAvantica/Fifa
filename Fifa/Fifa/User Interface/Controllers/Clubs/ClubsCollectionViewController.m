@@ -11,11 +11,24 @@
 #import "ClubRepository.h"
 #import "ClubsListViewController.h"
 
+static NSString* const kFifaClubCollectionCellIdentifier =  @"clubCollectionCellIdentifier";
+static NSString* const kFifaClubPlayerListVCIdentifier =  @"clubPlayerListViewControllerIdentifier";
+
 @implementation ClubsCollectionViewController
+
+#pragma mark -
+#pragma mark Public Methods
+#pragma mark -
 
 - (void) viewDidLoad{
     self.clubList = [[ClubRepository sharedRepository] clubs];
 }
+
+#pragma mark -
+#pragma mark Delegates
+#pragma mark -
+
+#pragma mark - Collection delegate
 
 -(NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView
 {
@@ -30,7 +43,7 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     ClubsCollectionViewCell *cell = [collectionView
-                                    dequeueReusableCellWithReuseIdentifier:@"clubCollectionCellIdentifier"
+                                    dequeueReusableCellWithReuseIdentifier: kFifaClubCollectionCellIdentifier
                                     forIndexPath:indexPath];
     [cell setBackgroundRandom: indexPath.row];
     [cell fillElements: self.clubList[indexPath.row]];
@@ -42,8 +55,10 @@
     return CGSizeMake(160, 150);
 }
 
+#pragma mark - prepare for segue delegate
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier  isEqual:  @"clubPlayerListViewControllerIdentifier"]){
+    if ([segue.identifier  isEqual:  kFifaClubPlayerListVCIdentifier]){
         ClubsListViewController* clubListViewController = segue.destinationViewController;
         NSIndexPath* indexPath =  self.collectionView.indexPathsForSelectedItems[0];
         clubListViewController.club = self.clubList[indexPath.row];

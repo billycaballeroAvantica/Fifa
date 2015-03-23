@@ -12,8 +12,6 @@
 @implementation ClubsViewController
 
 -(void) viewDidLoad{
-    self.navigationController.navigationBar.barTintColor = UIColorFromRGB(0x39654E);
-    self.navigationController.navigationBar.tintColor = UIColorFromRGB(0xFFFFFF);
 }
 
 @end

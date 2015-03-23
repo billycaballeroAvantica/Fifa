@@ -10,12 +10,25 @@
 #import "SkillPlayersTableViewCell.h"
 #import "TopTenListViewController.h"
 
+static NSString* const kFifaTopTenSkillCellIdentifier =  @"topTenSkillCellIdentifier";
+static NSString* const kFifaTopTenListVCIdentifier =  @"topTenListVCIdentifier";
+
 @implementation TopTenSkillTableViewController
+
+#pragma mark -
+#pragma mark Public Methods
+#pragma mark -
 
 - (void) viewDidLoad{
     self.skillPlayers = @[@"Pace", @"Dribbling", @"Shooting",
                              @"Defending", @"Heading", @"Passing", @"Height", @"Rating"];
 }
+
+#pragma mark -
+#pragma mark Delegates
+#pragma mark -
+
+#pragma mark - Table Delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -26,8 +39,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"topTenSkillCellIdentifier";
-    SkillPlayersTableViewCell *cell = (SkillPlayersTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    SkillPlayersTableViewCell *cell = (SkillPlayersTableViewCell *)[tableView dequeueReusableCellWithIdentifier:kFifaTopTenSkillCellIdentifier];
     [cell setSkillName: self.skillPlayers[indexPath.row]];
     [cell setSkillImage: [NSString stringWithFormat:@"%ld", (long)indexPath.row + 1]];
     return cell;
@@ -37,8 +49,10 @@
     return 100.0;
 }
 
+#pragma mark - prepare for segue delegate
+
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if( [segue.identifier  isEqual: @"topTenListVCIdentifier"] ){
+    if( [segue.identifier  isEqual: kFifaTopTenListVCIdentifier] ){
         TopTenListViewController *topTenListViewController = segue.destinationViewController;
         topTenListViewController.playerSkill = self.skillPlayers[self.tableView.indexPathForSelectedRow.row];
     }

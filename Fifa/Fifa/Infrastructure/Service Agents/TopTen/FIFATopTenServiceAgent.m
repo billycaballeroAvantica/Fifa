@@ -12,6 +12,26 @@
 
 @implementation FIFATopTenServiceAgent
 
+#pragma mark -
+#pragma mark Initialization
+#pragma mark -
+
++ (instancetype)sharedAgent
+{
+    static FIFATopTenServiceAgent *_sharedAgent = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedAgent = [[FIFATopTenServiceAgent alloc] initWithBaseUrl];
+    });
+    
+    return _sharedAgent;
+}
+
+#pragma mark -
+#pragma mark Public Methods
+#pragma mark -
+
+#pragma mark - request to get list of players by skill
 
 - (void)requestTopTenWithSkill:(NSString *)skill
                     successCallback:(void (^)(NSMutableArray *players))success
@@ -35,15 +55,5 @@
 }
 
 
-+ (instancetype)sharedAgent
-{
-    static FIFATopTenServiceAgent *_sharedAgent = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _sharedAgent = [[FIFATopTenServiceAgent alloc] initWithBaseUrl];
-    });
-    
-    return _sharedAgent;
-}
 
 @end

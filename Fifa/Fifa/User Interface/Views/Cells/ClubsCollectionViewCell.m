@@ -11,6 +11,11 @@
 
 @implementation ClubsCollectionViewCell
 
+#pragma mark -
+#pragma mark Public Methods
+#pragma mark -
+
+#pragma mark - set color custome to cell background
 
 -(void)setBackgroundRandom: (NSInteger) indexColor{
     NSArray *colorArray = @[ @"0x16a085", @"0xC0392B", @"0xf39c12", @"0xc0392b", @"0x2980b9", @"0x464646", @"0x336699", @"0x8E44AD", @"0x762F35", @"E67E22"];
@@ -19,6 +24,8 @@
     [[NSScanner scannerWithString:tempHex] scanHexInt:&colorInt];
     self.backgroundColor = UIColorFromRGB(colorInt);
 }
+
+#pragma mark - fill custome data to cell elements
 
 -(void)fillElements:(Club *)club{
     self.clubImageView.image = [UIImage imageNamed: club.resourceId];

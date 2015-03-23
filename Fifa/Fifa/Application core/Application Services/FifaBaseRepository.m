@@ -10,10 +10,18 @@
 
 @implementation FifaBaseRepository
 
+#pragma mark -
+#pragma mark Public Methods
+#pragma mark -
+
+#pragma mark - create object
+
 -(id) insertManagedObjectOfClass:(Class)aClass inManagedObjectContext:(NSManagedObjectContext*) managedObjectContext{
     NSManagedObject* managedObject = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(aClass) inManagedObjectContext:managedObjectContext];
     return managedObject;
 }
+
+#pragma mark - save objects
 
 -(BOOL) saveManagedObjectContext:(NSManagedObjectContext*) managedObjectContext{
     NSError* error;
@@ -25,6 +33,8 @@
     
     return YES;
 }
+
+#pragma mark - query in database
 
 -(NSArray*) fetchEntitiesForClass:(Class)aClass withPredicate:(NSPredicate*)predicate inManagedObjectContext:(NSManagedObjectContext*)managedObjectContext{
     

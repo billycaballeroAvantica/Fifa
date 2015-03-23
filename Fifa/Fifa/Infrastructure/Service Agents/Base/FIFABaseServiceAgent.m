@@ -8,9 +8,13 @@
 
 #import "FIFABaseServiceAgent.h"
 
-NSString * const kFIFABaseUrl = @"http://tools.fifaguide.com/api/";
+static NSString * const kFIFABaseUrl = @"http://tools.fifaguide.com/api/";
 
 @implementation FIFABaseServiceAgent
+
+#pragma mark -
+#pragma mark Initialization
+#pragma mark -
 
 -(instancetype)initWithBaseUrl{
     self = [super initWithBaseURL: [NSURL URLWithString: kFIFABaseUrl]];

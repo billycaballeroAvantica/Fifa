@@ -12,10 +12,19 @@
 #import "UIColor+CustomColors.h"
 #import "Player.h"
 
+static NSString* const kFifaTonTenListCellIdentifier = @"topTenListCellIdentifier";
+static NSString* const kFifaPlayerDetailVCIdentifier = @"playerDetailViewControllerIdentifier";
+
 @implementation PlayerListTableViewController
 
 - (void) viewDidLoad{
 }
+
+#pragma mark -
+#pragma mark Delegates
+#pragma mark -
+
+#pragma mark - table delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -26,8 +35,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"topTenListCellIdentifier";
-    PlayerListTableViewCell *cell = (PlayerListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    PlayerListTableViewCell *cell = (PlayerListTableViewCell *)[tableView dequeueReusableCellWithIdentifier: kFifaTonTenListCellIdentifier];
     Player *player = self.players[indexPath.row];
     [cell fillCell: player];
     if (indexPath.row % 2 != 0) {
@@ -43,8 +51,10 @@
     return 100.0;
 }
 
+#pragma mark - prepare for segue delegate
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier  isEqual: @"playerDetailViewControllerIdentifier"]) {
+    if ([segue.identifier  isEqual: kFifaPlayerDetailVCIdentifier]) {
         PlayerDetailViewController *playerDetailViewController = segue.destinationViewController;
         Player *player = self.players[self.tableView.indexPathForSelectedRow.row];
         playerDetailViewController.player = player;

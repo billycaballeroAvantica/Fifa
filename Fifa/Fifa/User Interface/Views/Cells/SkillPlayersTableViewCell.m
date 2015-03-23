@@ -10,6 +10,10 @@
 
 @implementation SkillPlayersTableViewCell
 
+#pragma mark -
+#pragma mark Public Methods
+#pragma mark -
+
 -(void)setSkillImage:(NSString *)imageName{
     self.skillImageImageview.image = [UIImage imageNamed: imageName];
 }

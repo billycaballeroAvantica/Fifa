@@ -20,6 +20,10 @@ static NSString * const kFIFAPlayerCountryBaseUrl = @"cardflagssmall/web/";
 
 @implementation ImageDownloadHelper
 
+#pragma mark -
+#pragma mark Public Methods
+#pragma mark -
+
 +(void)fillProfileImage:(UIImageView *)imageProfile url:(NSString *)route{
     NSString *stringProfileUrl =  [NSString stringWithFormat:@"%@%@%@.png", kFIFAPlayerResorces, kFIFAPlayerProfileBaseUrl, route];
     [self downloadImage:imageProfile url:[NSURL URLWithString: stringProfileUrl]];
@@ -34,6 +38,8 @@ static NSString * const kFIFAPlayerCountryBaseUrl = @"cardflagssmall/web/";
      NSString *stringCountryUrl =  [NSString stringWithFormat:@"%@%@%@.png", kFIFAPlayerResorces, kFIFAPlayerCountryBaseUrl, route];
     [self downloadImage:imageCountry url:[NSURL URLWithString: stringCountryUrl] ];
 }
+
+#pragma mark - set image from web service
 
 +(void)downloadImage: (UIImageView *)imageView url: (NSURL *) url{
     NSURLRequest *imageRequest = [NSURLRequest requestWithURL:url

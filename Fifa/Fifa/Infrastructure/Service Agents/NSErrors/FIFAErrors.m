@@ -9,7 +9,7 @@
 #import "FIFAErrors.h"
 #import "AVTAlertViewFactory.h"
 
-NSString * const kFIFAErrorDomain = @"Fifa";
+static NSString * const kFIFAErrorDomain = @"Fifa";
 
 @implementation FIFAErrors
 

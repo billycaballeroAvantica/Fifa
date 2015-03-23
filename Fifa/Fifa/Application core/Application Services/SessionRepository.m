@@ -15,23 +15,9 @@
 
 @implementation SessionRepository
 
-- (void) setCurrentUser:(NSString *)user_name userPassword:(NSString *)password {
-    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"FifaAvanticaLogin" accessGroup:nil];
-    [keychainItem setObject:(__bridge id)(kSecAttrAccessibleWhenUnlocked) forKey:(__bridge id)(kSecAttrAccessible)];
-    [keychainItem setObject: user_name forKey:(__bridge id)(kSecAttrAccount)];
-    [keychainItem setObject: password forKey:(__bridge id)(kSecValueData)];
-}
-
-- (NSString *) getUsername{
-    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"FifaAvanticaLogin" accessGroup:nil];
-    [keychainItem setObject:(__bridge id)(kSecAttrAccessibleWhenUnlocked) forKey:(__bridge id)(kSecAttrAccessible)];
-    NSString *username = [keychainItem objectForKey: (__bridge id)(kSecAttrAccount)];
-    return username;
-}
-
-- (BOOL) loginValidateFields:(NSString *)user_name userPassword:(NSString *)password{
-    return !([user_name isEqualToString:@""] && [password isEqualToString:@""]);
-}
+#pragma mark -
+#pragma mark Initialization
+#pragma mark -
 
 + (instancetype)sharedRepository
 {
@@ -41,6 +27,34 @@
         _sharedRepository = [[self class] new];
     });
     return _sharedRepository;
+}
+
+#pragma mark -
+#pragma mark Public Methods
+#pragma mark -
+
+#pragma mark save current user
+
+- (void) setCurrentUser:(NSString *)user_name userPassword:(NSString *)password {
+    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"FifaAvanticaLogin" accessGroup:nil];
+    [keychainItem setObject:(__bridge id)(kSecAttrAccessibleWhenUnlocked) forKey:(__bridge id)(kSecAttrAccessible)];
+    [keychainItem setObject: user_name forKey:(__bridge id)(kSecAttrAccount)];
+    [keychainItem setObject: password forKey:(__bridge id)(kSecValueData)];
+}
+
+#pragma mark get user name
+
+- (NSString *) getUsername{
+    KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:@"FifaAvanticaLogin" accessGroup:nil];
+    [keychainItem setObject:(__bridge id)(kSecAttrAccessibleWhenUnlocked) forKey:(__bridge id)(kSecAttrAccessible)];
+    NSString *username = [keychainItem objectForKey: (__bridge id)(kSecAttrAccount)];
+    return username;
+}
+
+#pragma mark validate login
+
+- (BOOL) loginValidateFields:(NSString *)user_name userPassword:(NSString *)password{
+    return !([user_name isEqualToString:@""] && [password isEqualToString:@""]);
 }
 
 @end

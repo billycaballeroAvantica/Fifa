@@ -12,11 +12,17 @@
 
 @implementation PlayerDetailViewController
 
+#pragma mark -
+#pragma mark Public Methods
+#pragma mark -
+
 -(void)viewDidLoad{
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self fillElements];
     [self requestToUpdatePlayerInfo];
 }
+
+#pragma mark - request to get player info from web services
 
 -(void)requestToUpdatePlayerInfo{
     [[MRProgressOverlayView showOverlayAddedTo:self.view title: @"Loading" mode: MRProgressOverlayViewModeIndeterminate animated:TRUE] setTintColor: [UIColor blackColor]];

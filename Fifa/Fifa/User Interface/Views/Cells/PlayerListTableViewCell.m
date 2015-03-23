@@ -11,6 +11,10 @@
 
 @implementation PlayerListTableViewCell
 
+#pragma mark -
+#pragma mark Public Methods
+#pragma mark -
+
 -(void) fillCell:(Player *)player{
     self.playerNameLabel.text = [NSString stringWithFormat: @"%@", player.firstName];
     [ImageDownloadHelper fillProfileImage:self.playerProfileImageView url: [NSString stringWithFormat: @"%@", player.baseId] ];
